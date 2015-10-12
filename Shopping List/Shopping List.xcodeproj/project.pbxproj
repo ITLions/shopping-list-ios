@@ -17,9 +17,10 @@
 		A6CB2D6A1BCC397400ED22B5 /* SLProductListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB2D601BCC397400ED22B5 /* SLProductListEntity.swift */; settings = {ASSET_TAGS = (); }; };
 		A6CB2D6B1BCC397400ED22B5 /* SLListItemEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB2D611BCC397400ED22B5 /* SLListItemEntity+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		A6CB2D6C1BCC397400ED22B5 /* SLListItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB2D621BCC397400ED22B5 /* SLListItemEntity.swift */; settings = {ASSET_TAGS = (); }; };
-		A6CB2D731BCC3A1200ED22B5 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB2D721BCC3A1200ED22B5 /* CoreDataController.swift */; settings = {ASSET_TAGS = (); }; };
-		A6CB2D751BCC3A2000ED22B5 /* CoreDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB2D741BCC3A2000ED22B5 /* CoreDataMapper.swift */; settings = {ASSET_TAGS = (); }; };
-		E5A3505C1BCBC9D80098AA89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A3505B1BCBC9D80098AA89 /* AppDelegate.swift */; };
+		A6CB2D731BCC3A1200ED22B5 /* SLCoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB2D721BCC3A1200ED22B5 /* SLCoreDataController.swift */; settings = {ASSET_TAGS = (); }; };
+		A6CB2D751BCC3A2000ED22B5 /* SLCoreDataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB2D741BCC3A2000ED22B5 /* SLCoreDataImporter.swift */; settings = {ASSET_TAGS = (); }; };
+		A6CB2D7A1BCC511D00ED22B5 /* SLCoreDataExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB2D791BCC511D00ED22B5 /* SLCoreDataExporter.swift */; settings = {ASSET_TAGS = (); }; };
+		E5A3505C1BCBC9D80098AA89 /* SLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A3505B1BCBC9D80098AA89 /* SLAppDelegate.swift */; };
 		E5A350641BCBC9D80098AA89 /* Shopping_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5A350621BCBC9D80098AA89 /* Shopping_List.xcdatamodeld */; };
 		E5A350661BCBC9D80098AA89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5A350651BCBC9D80098AA89 /* Assets.xcassets */; };
 		E5A350691BCBC9D80098AA89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A350671BCBC9D80098AA89 /* LaunchScreen.storyboard */; };
@@ -54,10 +55,11 @@
 		A6CB2D601BCC397400ED22B5 /* SLProductListEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLProductListEntity.swift; sourceTree = "<group>"; };
 		A6CB2D611BCC397400ED22B5 /* SLListItemEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SLListItemEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A6CB2D621BCC397400ED22B5 /* SLListItemEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLListItemEntity.swift; sourceTree = "<group>"; };
-		A6CB2D721BCC3A1200ED22B5 /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
-		A6CB2D741BCC3A2000ED22B5 /* CoreDataMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataMapper.swift; sourceTree = "<group>"; };
+		A6CB2D721BCC3A1200ED22B5 /* SLCoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLCoreDataController.swift; sourceTree = "<group>"; };
+		A6CB2D741BCC3A2000ED22B5 /* SLCoreDataImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLCoreDataImporter.swift; sourceTree = "<group>"; };
+		A6CB2D791BCC511D00ED22B5 /* SLCoreDataExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLCoreDataExporter.swift; sourceTree = "<group>"; };
 		E5A350581BCBC9D80098AA89 /* Shopping List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5A3505B1BCBC9D80098AA89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E5A3505B1BCBC9D80098AA89 /* SLAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLAppDelegate.swift; sourceTree = "<group>"; };
 		E5A350631BCBC9D80098AA89 /* Shopping_List.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shopping_List.xcdatamodel; sourceTree = "<group>"; };
 		E5A350651BCBC9D80098AA89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5A350681BCBC9D80098AA89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,7 +99,8 @@
 		A6CB2D241BCC359900ED22B5 /* Core Data Layer */ = {
 			isa = PBXGroup;
 			children = (
-				A6CB2D6E1BCC39C700ED22B5 /* Core Data Mapper */,
+				A6CB2D781BCC50EA00ED22B5 /* Core Data Exporter */,
+				A6CB2D6E1BCC39C700ED22B5 /* Core Data Importer */,
 				A6CB2D6D1BCC39BE00ED22B5 /* Core Data Controller */,
 				A6CB2D251BCC388600ED22B5 /* NSManagedObject */,
 				E5A350621BCBC9D80098AA89 /* Shopping_List.xcdatamodeld */,
@@ -125,17 +128,25 @@
 		A6CB2D6D1BCC39BE00ED22B5 /* Core Data Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A6CB2D721BCC3A1200ED22B5 /* CoreDataController.swift */,
+				A6CB2D721BCC3A1200ED22B5 /* SLCoreDataController.swift */,
 			);
 			name = "Core Data Controller";
 			sourceTree = "<group>";
 		};
-		A6CB2D6E1BCC39C700ED22B5 /* Core Data Mapper */ = {
+		A6CB2D6E1BCC39C700ED22B5 /* Core Data Importer */ = {
 			isa = PBXGroup;
 			children = (
-				A6CB2D741BCC3A2000ED22B5 /* CoreDataMapper.swift */,
+				A6CB2D741BCC3A2000ED22B5 /* SLCoreDataImporter.swift */,
 			);
-			name = "Core Data Mapper";
+			name = "Core Data Importer";
+			sourceTree = "<group>";
+		};
+		A6CB2D781BCC50EA00ED22B5 /* Core Data Exporter */ = {
+			isa = PBXGroup;
+			children = (
+				A6CB2D791BCC511D00ED22B5 /* SLCoreDataExporter.swift */,
+			);
+			name = "Core Data Exporter";
 			sourceTree = "<group>";
 		};
 		E5A3504F1BCBC9D80098AA89 = {
@@ -162,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				A6CB2D241BCC359900ED22B5 /* Core Data Layer */,
-				E5A3505B1BCBC9D80098AA89 /* AppDelegate.swift */,
+				E5A3505B1BCBC9D80098AA89 /* SLAppDelegate.swift */,
 				E5A350651BCBC9D80098AA89 /* Assets.xcassets */,
 				E5A350671BCBC9D80098AA89 /* LaunchScreen.storyboard */,
 				E5A3506A1BCBC9D80098AA89 /* Info.plist */,
@@ -321,13 +332,14 @@
 				A6CB2D681BCC397400ED22B5 /* SLUnitEntity.swift in Sources */,
 				A6CB2D641BCC397400ED22B5 /* SLProductEntity.swift in Sources */,
 				A6CB2D691BCC397400ED22B5 /* SLProductListEntity+CoreDataProperties.swift in Sources */,
-				E5A3505C1BCBC9D80098AA89 /* AppDelegate.swift in Sources */,
+				A6CB2D7A1BCC511D00ED22B5 /* SLCoreDataExporter.swift in Sources */,
+				E5A3505C1BCBC9D80098AA89 /* SLAppDelegate.swift in Sources */,
 				A6CB2D6A1BCC397400ED22B5 /* SLProductListEntity.swift in Sources */,
 				A6CB2D6B1BCC397400ED22B5 /* SLListItemEntity+CoreDataProperties.swift in Sources */,
 				A6CB2D651BCC397400ED22B5 /* SLCategoryEntity+CoreDataProperties.swift in Sources */,
-				A6CB2D751BCC3A2000ED22B5 /* CoreDataMapper.swift in Sources */,
+				A6CB2D751BCC3A2000ED22B5 /* SLCoreDataImporter.swift in Sources */,
 				E5A350641BCBC9D80098AA89 /* Shopping_List.xcdatamodeld in Sources */,
-				A6CB2D731BCC3A1200ED22B5 /* CoreDataController.swift in Sources */,
+				A6CB2D731BCC3A1200ED22B5 /* SLCoreDataController.swift in Sources */,
 				A6CB2D661BCC397400ED22B5 /* SLCategoryEntity.swift in Sources */,
 				A6CB2D631BCC397400ED22B5 /* SLProductEntity+CoreDataProperties.swift in Sources */,
 				A6CB2D671BCC397400ED22B5 /* SLUnitEntity+CoreDataProperties.swift in Sources */,

@@ -8,9 +8,8 @@
 
 import Foundation
 
-class CoreDataMapper: NSObject {
-    private var dataController : CoreDataController! // own data controller to approach data base
-    
+class SLCoreDataImporter: NSObject {
+    private var dataController: SLCoreDataController! // own data controller to approach data base
     // list of methods to create nsmanagedobjects from dictionaries
     // insert them into context after
     // error handling

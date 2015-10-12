@@ -9,11 +9,11 @@
 import Foundation
 import CoreData
 
-protocol CoreDataControllerListener {
+protocol SLCoreDataControllerListener { // to subscribe and unsubscribe from db cahnges
     func contextDidSave(context :NSManagedObjectContext)
 }
 
-class CoreDataController: NSObject {
+class SLCoreDataController: NSObject {
     private let mainContext : NSManagedObjectContext!
     private let listeners : NSHashTable!
     
@@ -50,21 +50,21 @@ class CoreDataController: NSObject {
     
     //MARK: - Public Notifications
     
-    internal func subscribeListenerForDatabaseChanges <Listener where Listener: CoreDataControllerListener, Listener: AnyObject> (newListener: Listener) {
+    internal func subscribeListenerForDatabaseChanges <Listener where Listener: SLCoreDataControllerListener, Listener: AnyObject> (newListener: Listener) {
         self.listeners.addObject(newListener)
         NSNotificationCenter.defaultCenter().addObserver(newListener, selector: "contextDidSave:", name: NSManagedObjectContextDidSaveNotification, object: self.mainContext)
     }
     
-    internal func unsubscribeListenerForDatabaseChanges <Listener where Listener: CoreDataControllerListener, Listener: AnyObject> (oldListener: Listener) {
+    internal func unsubscribeListenerForDatabaseChanges <Listener where Listener: SLCoreDataControllerListener, Listener: AnyObject> (oldListener: Listener) {
         self.listeners.removeObject(oldListener)
         NSNotificationCenter.defaultCenter().removeObserver(oldListener, name: NSManagedObjectContextDidSaveNotification, object: self.mainContext)
     }
     
     // MARK: - Public Context Performance
     
-    internal func performOnMainContext(performBlock: (NSManagedObjectContext) -> Void) {
+    internal func performOnMainContext(performBlock: (context: NSManagedObjectContext) -> Void) {
         self.mainContext.performBlock { () -> Void in
-            performBlock(self.mainContext)
+            performBlock(context: self.mainContext)
             
             do {
                 try self.mainContext.save()
@@ -75,9 +75,9 @@ class CoreDataController: NSObject {
         }
     }
     
-    internal func performAndWaitOnMainContext(performBlock: (NSManagedObjectContext) -> Void) {
+    internal func performAndWaitOnMainContext(performBlock: (context: NSManagedObjectContext) -> Void) {
         self.mainContext.performBlockAndWait { () -> Void in
-            performBlock(self.mainContext)
+            performBlock(context: self.mainContext)
             
             do {
                 try self.mainContext.save()
@@ -87,14 +87,14 @@ class CoreDataController: NSObject {
         }
     }
     
-    internal func performOnTemporaryContext(performBlock: (NSManagedObjectContext) -> Void) {
+    internal func performOnTemporaryContext(performBlock: (context: NSManagedObjectContext) -> Void) {
         let tempContext = NSManagedObjectContext.init(concurrencyType: .PrivateQueueConcurrencyType)
         tempContext.persistentStoreCoordinator = self.mainContext.persistentStoreCoordinator
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "contextDidSave:", name: NSManagedObjectContextDidSaveNotification, object: tempContext)
     
         tempContext.performBlock { () -> Void in
-            performBlock(tempContext)
+            performBlock(context: tempContext)
             
             NSNotificationCenter.defaultCenter().removeObserver(self, name: NSManagedObjectContextDidSaveNotification, object: tempContext)
         }

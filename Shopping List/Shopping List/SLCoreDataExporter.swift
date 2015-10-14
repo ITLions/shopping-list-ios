@@ -16,7 +16,25 @@ class SLCoreDataExporter: NSObject {
     }
     
     // Export NSManagedObjects from CoreData
-    func listItemsForProductList(productList: SLProductListEntity) -> [SLListItemEntity] {
+    
+    //MARK: - Public
+    internal func listItemsForProductList(productList: SLProductListEntity) -> [SLListItemEntity] {
         return [SLListItemEntity()]
     }
+    
+    internal func exportAllProductLists() -> [SLProductListEntity] {
+        return [SLProductListEntity()]
+    }
+    
+    internal func exportCategories() -> [SLCategoryEntity] {
+        return [SLCategoryEntity()]
+    }
+    
+    internal func productsForCategory(category: SLCategoryEntity) -> [SLProductEntity] {
+        return [SLProductEntity()]
+    }
+    
+    //MARK: - Private
+    
+    
 }

@@ -9,7 +9,14 @@
 import UIKit
 
 class SLNetworkOperation: NSOperation {
-    override init() {
-        
+    init(requestSerialization: SLRequestSerialization, responseSerialization: SLResponseSerialization) {
+        super.init()
+    }
+
+    override func main() {
+        // create NSURLSession 
+        // get request from RS
+        // wait for execution
+        // prepare response serialization
     }
 }

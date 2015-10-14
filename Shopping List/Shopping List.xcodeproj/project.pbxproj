@@ -26,6 +26,8 @@
 		E5A350691BCBC9D80098AA89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A350671BCBC9D80098AA89 /* LaunchScreen.storyboard */; };
 		E5A3507F1BCBC9D90098AA89 /* Shopping_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A3507E1BCBC9D90098AA89 /* Shopping_ListUITests.swift */; };
 		E5D7E1781BCE99BF00981DB8 /* SLNetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E1771BCE99BF00981DB8 /* SLNetworkOperation.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E17E1BCE9ACC00981DB8 /* SLResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E17D1BCE9ACC00981DB8 /* SLResponseSerialization.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E1801BCE9AD900981DB8 /* SLRequestSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E17F1BCE9AD900981DB8 /* SLRequestSerialization.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		E5A3507E1BCBC9D90098AA89 /* Shopping_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping_ListUITests.swift; sourceTree = "<group>"; };
 		E5A350801BCBC9D90098AA89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5D7E1771BCE99BF00981DB8 /* SLNetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLNetworkOperation.swift; sourceTree = "<group>"; };
+		E5D7E17D1BCE9ACC00981DB8 /* SLResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLResponseSerialization.swift; sourceTree = "<group>"; };
+		E5D7E17F1BCE9AD900981DB8 /* SLRequestSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLRequestSerialization.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,9 +208,43 @@
 		E5D7E1761BCE99B200981DB8 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
+				E5D7E17A1BCE9A9E00981DB8 /* Serialization */,
+				E5D7E1791BCE9A8F00981DB8 /* Network Operations */,
 				E5D7E1771BCE99BF00981DB8 /* SLNetworkOperation.swift */,
 			);
 			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		E5D7E1791BCE9A8F00981DB8 /* Network Operations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Network Operations";
+			sourceTree = "<group>";
+		};
+		E5D7E17A1BCE9A9E00981DB8 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E17C1BCE9AB400981DB8 /* Response Serialization */,
+				E5D7E17B1BCE9AAC00981DB8 /* Request Serialization */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+		E5D7E17B1BCE9AAC00981DB8 /* Request Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E17F1BCE9AD900981DB8 /* SLRequestSerialization.swift */,
+			);
+			name = "Request Serialization";
+			sourceTree = "<group>";
+		};
+		E5D7E17C1BCE9AB400981DB8 /* Response Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E17D1BCE9ACC00981DB8 /* SLResponseSerialization.swift */,
+			);
+			name = "Response Serialization";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +384,8 @@
 				A6CB2D7A1BCC511D00ED22B5 /* SLCoreDataExporter.swift in Sources */,
 				E5A3505C1BCBC9D80098AA89 /* SLAppDelegate.swift in Sources */,
 				A6CB2D6A1BCC397400ED22B5 /* SLProductListEntity.swift in Sources */,
+				E5D7E1801BCE9AD900981DB8 /* SLRequestSerialization.swift in Sources */,
+				E5D7E17E1BCE9ACC00981DB8 /* SLResponseSerialization.swift in Sources */,
 				A6CB2D6B1BCC397400ED22B5 /* SLListItemEntity+CoreDataProperties.swift in Sources */,
 				A6CB2D651BCC397400ED22B5 /* SLCategoryEntity+CoreDataProperties.swift in Sources */,
 				A6CB2D751BCC3A2000ED22B5 /* SLCoreDataImporter.swift in Sources */,

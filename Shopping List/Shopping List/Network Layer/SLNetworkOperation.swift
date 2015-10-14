@@ -9,5 +9,7 @@
 import UIKit
 
 class SLNetworkOperation: NSOperation {
-    
+    override init() {
+        
+    }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class SLResponseSerialization: NSObject {
     private let coreDataImporter: SLCoreDataImporter!
+    private var mappingObject: NSDictionary?
     
     init(coreDataImporter: SLCoreDataImporter) {
         self.coreDataImporter = coreDataImporter
@@ -17,10 +18,18 @@ class SLResponseSerialization: NSObject {
     }
     
     func parseResponseData(response: NSURLResponse, responseData: NSData) {
-        
+        do {
+            let responseDictionary: NSDictionary = try NSJSONSerialization.JSONObjectWithData(responseData, options: .AllowFragments) as! NSDictionary
+            if self.mappingObject != nil {
+                self.importParsedData(self.mappingObject!, parsedData: responseDictionary)
+            }
+        } catch {
+            // handle errors
+        }
     }
     
-    private func importParsedData(mappingObject: AnyObject, parsedData: AnyObject) {
-        
+    private func importParsedData(mappingObject: NSDictionary, parsedData: NSDictionary) {
+        // interface for write data into CD
+        // override this method in subclasses
     }
 }

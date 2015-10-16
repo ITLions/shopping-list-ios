@@ -14,6 +14,10 @@ class SLCoreDataImporter: NSObject {
     // insert them into context after
     // error handling
     // tests
+    init(dataController: SLCoreDataController) {
+        self.dataController = dataController
+        super.init()
+    }
     
     internal func importProductList(listName: String) -> SLProductListEntity {
         return SLProductListEntity();

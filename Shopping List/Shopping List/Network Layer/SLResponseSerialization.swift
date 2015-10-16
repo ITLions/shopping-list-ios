@@ -11,16 +11,16 @@ import UIKit
 class SLResponseSerialization: NSObject {
     private let coreDataImporter: SLCoreDataImporter!
     
-    init(response: NSURLResponse, reponseData: NSData, coreDataImporter: SLCoreDataImporter) {
+    init(coreDataImporter: SLCoreDataImporter) {
         self.coreDataImporter = coreDataImporter
         super.init()
     }
     
-    private func parceResponseData(responseData: NSData) {
+    func parseResponseData(response: NSURLResponse, responseData: NSData) {
         
     }
     
-    private func importParsedData(mappingObject: NSObject, parsedData: NSObject) {
+    private func importParsedData(mappingObject: AnyObject, parsedData: AnyObject) {
         
     }
 }

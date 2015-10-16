@@ -9,11 +9,19 @@
 import UIKit
 
 class SLRequestSerialization: NSObject {
-    init(url: NSURL, method: String, parameters: NSObject) {
+    private  var url: NSURL
+    internal var method: String
+    internal var parameters: AnyObject
+    
+    init(url: NSURL, method: String, parameters: AnyObject) {
+        self.url = url
+        self.method = method
+        self.parameters = parameters
         super.init()
     }
     
     internal func buildRequest() -> NSURLRequest {
-        return NSURLRequest()
+        // add params to GET request here
+        return NSURLRequest.init(URL: self.url)
     }
 }

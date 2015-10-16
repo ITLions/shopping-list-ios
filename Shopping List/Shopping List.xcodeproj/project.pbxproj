@@ -154,8 +154,7 @@
 				A6CB2D5D1BCC397400ED22B5 /* SLUnitEntity+CoreDataProperties.swift */,
 				A6CB2D5E1BCC397400ED22B5 /* SLUnitEntity.swift */,
 			);
-			name = "NSManagedObject's";
-			path = NSManagedObject;
+			path = "NSManagedObject's";
 			sourceTree = "<group>";
 		};
 		A6CB2D6D1BCC39BE00ED22B5 /* Core Data Controller */ = {
@@ -205,10 +204,10 @@
 		E5A3505A1BCBC9D80098AA89 /* Shopping List */ = {
 			isa = PBXGroup;
 			children = (
-				E5D7E1991BD12E3300981DB8 /* UI Layer */,
 				E5D7E18F1BD12C8000981DB8 /* Application Layer */,
 				A6CB2D241BCC359900ED22B5 /* Core Data Layer */,
 				E5D7E1761BCE99B200981DB8 /* Network Layer */,
+				E5D7E1991BD12E3300981DB8 /* UI Layer */,
 				E5A350651BCBC9D80098AA89 /* Assets.xcassets */,
 				E5A3506A1BCBC9D80098AA89 /* Info.plist */,
 				E5A350671BCBC9D80098AA89 /* LaunchScreen.storyboard */,
@@ -237,8 +236,8 @@
 		E5D7E1761BCE99B200981DB8 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
-				E5D7E17A1BCE9A9E00981DB8 /* Serialization */,
 				E5D7E1791BCE9A8F00981DB8 /* Network Operations */,
+				E5D7E17A1BCE9A9E00981DB8 /* Serialization */,
 				E5D7E1771BCE99BF00981DB8 /* SLNetworkOperation.swift */,
 				E5D7E18D1BD1108A00981DB8 /* SLNetworkService.swift */,
 			);
@@ -249,16 +248,16 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = "Network Operations";
+			path = "Network Operations";
 			sourceTree = "<group>";
 		};
 		E5D7E17A1BCE9A9E00981DB8 /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
-				E5D7E17C1BCE9AB400981DB8 /* Response Serialization */,
 				E5D7E17B1BCE9AAC00981DB8 /* Request Serialization */,
+				E5D7E17C1BCE9AB400981DB8 /* Response Serialization */,
 			);
-			name = Serialization;
+			path = Serialization;
 			sourceTree = "<group>";
 		};
 		E5D7E17B1BCE9AAC00981DB8 /* Request Serialization */ = {
@@ -266,7 +265,7 @@
 			children = (
 				E5D7E17F1BCE9AD900981DB8 /* SLRequestSerialization.swift */,
 			);
-			name = "Request Serialization";
+			path = "Request Serialization";
 			sourceTree = "<group>";
 		};
 		E5D7E17C1BCE9AB400981DB8 /* Response Serialization */ = {
@@ -274,18 +273,18 @@
 			children = (
 				E5D7E17D1BCE9ACC00981DB8 /* SLResponseSerialization.swift */,
 			);
-			name = "Response Serialization";
+			path = "Response Serialization";
 			sourceTree = "<group>";
 		};
 		E5D7E18F1BD12C8000981DB8 /* Application Layer */ = {
 			isa = PBXGroup;
 			children = (
-				E5D7E1981BD12E2D00981DB8 /* View Controllers */,
-				E5D7E1961BD12E1A00981DB8 /* View Models */,
 				E5D7E1931BD12DD000981DB8 /* Create New List Flow */,
 				E5D7E1901BD12C9C00981DB8 /* Main Flow */,
+				E5D7E1981BD12E2D00981DB8 /* View Controllers */,
+				E5D7E1961BD12E1A00981DB8 /* View Models */,
 			);
-			name = "Application Layer";
+			path = "Application Layer";
 			sourceTree = "<group>";
 		};
 		E5D7E1901BD12C9C00981DB8 /* Main Flow */ = {
@@ -294,7 +293,7 @@
 				E5D7E1911BD12CB000981DB8 /* MainFlow.storyboard */,
 				E5D7E1AE1BD1322F00981DB8 /* SLMainFlow.swift */,
 			);
-			name = "Main Flow";
+			path = "Main Flow";
 			sourceTree = "<group>";
 		};
 		E5D7E1931BD12DD000981DB8 /* Create New List Flow */ = {
@@ -303,7 +302,7 @@
 				E5D7E1941BD12DDE00981DB8 /* CreateNewListFlow.storyboard */,
 				E5D7E1B01BD1323A00981DB8 /* SLCreateNewListFlow.swift */,
 			);
-			name = "Create New List Flow";
+			path = "Create New List Flow";
 			sourceTree = "<group>";
 		};
 		E5D7E1961BD12E1A00981DB8 /* View Models */ = {
@@ -312,7 +311,7 @@
 				E5D7E1A91BD12EE300981DB8 /* Create New List Flow */,
 				E5D7E1A41BD12EB800981DB8 /* Main Flow */,
 			);
-			name = "View Models";
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 		E5D7E1981BD12E2D00981DB8 /* View Controllers */ = {
@@ -321,14 +320,14 @@
 				E5D7E19F1BD12E8600981DB8 /* Create New List Flow */,
 				E5D7E19E1BD12E7E00981DB8 /* Main Flow */,
 			);
-			name = "View Controllers";
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		E5D7E1991BD12E3300981DB8 /* UI Layer */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "UI Layer";
+			path = "UI Layer";
 			sourceTree = "<group>";
 		};
 		E5D7E19E1BD12E7E00981DB8 /* Main Flow */ = {
@@ -337,7 +336,7 @@
 				E5D7E19A1BD12E5400981DB8 /* SLProductsListsVewController.swift */,
 				E5D7E19C1BD12E7A00981DB8 /* SLReviewListViewController.swift */,
 			);
-			name = "Main Flow";
+			path = "Main Flow";
 			sourceTree = "<group>";
 		};
 		E5D7E19F1BD12E8600981DB8 /* Create New List Flow */ = {
@@ -346,7 +345,7 @@
 				E5D7E1A01BD12E9C00981DB8 /* SLCategoryPickerViewController.swift */,
 				E5D7E1A21BD12EA500981DB8 /* SLProductPickerViewController.swift */,
 			);
-			name = "Create New List Flow";
+			path = "Create New List Flow";
 			sourceTree = "<group>";
 		};
 		E5D7E1A41BD12EB800981DB8 /* Main Flow */ = {
@@ -355,7 +354,7 @@
 				E5D7E1A51BD12ED300981DB8 /* SLProductsListsViewModel.swift */,
 				E5D7E1A71BD12EDD00981DB8 /* SLReviewListViewModel.swift */,
 			);
-			name = "Main Flow";
+			path = "Main Flow";
 			sourceTree = "<group>";
 		};
 		E5D7E1A91BD12EE300981DB8 /* Create New List Flow */ = {
@@ -364,7 +363,7 @@
 				E5D7E1AA1BD12EF500981DB8 /* SLCategoryPickerViewModel.swift */,
 				E5D7E1AC1BD12F0100981DB8 /* SLProductPickerViewModel.swift */,
 			);
-			name = "Create New List Flow";
+			path = "Create New List Flow";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

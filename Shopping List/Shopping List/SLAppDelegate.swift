@@ -29,6 +29,16 @@ class SLAppDelegate: UIResponder, UIApplicationDelegate {
         let coreDataImporter: SLCoreDataImporter = SLCoreDataImporter.init(dataController: coreDataController)
         let networkService: SLNetworkService = SLNetworkService.init(coreDataImporter: coreDataImporter)
         
+        self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
+        self.window!.makeKeyAndVisible()
+        let applicationNavigationController = UINavigationController.init()
+        self.window!.rootViewController = applicationNavigationController
+        
+        let mainFlow: SLMainFlow = SLMainFlow.init(navigationController: applicationNavigationController)
+        mainFlow.coreDataExporter = coreDataExporter
+        mainFlow.networkService = networkService
+        mainFlow.start()
+        
         return true
     }
 

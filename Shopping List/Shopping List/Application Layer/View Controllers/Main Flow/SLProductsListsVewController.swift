@@ -10,6 +10,8 @@ import UIKit
 
 class SLProductsListsVewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var viewModel: SLProductsListsViewModel!
+    var addNewListAction: (() -> Void)!
+    
     
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -19,6 +21,7 @@ class SLProductsListsVewController: UIViewController, UITableViewDelegate, UITab
     @IBAction func addBarItemAction(sender: AnyObject) {
         // send action to MainFlow
         // and start new Flow
+        self.addNewListAction()
     }
     
     // MARK: - Table View

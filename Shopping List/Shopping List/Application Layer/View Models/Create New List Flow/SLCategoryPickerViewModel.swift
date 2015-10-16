@@ -8,6 +8,15 @@
 
 import UIKit
 
-class SLCategoryPickerViewModel: NSObject {
-
+class SLCategoryPickerViewModel: NSObject, SLCoreDataControllerListener {
+    var coreDataExporter: SLCoreDataExporter?
+    var networkService: SLNetworkService?
+    
+    internal func reloadData() {
+        
+    }
+    
+    func databaseDidChangeState() {
+        
+    }
 }

@@ -8,6 +8,35 @@
 
 import UIKit
 
-class SLCreateNewListFlow: NSObject {
+class SLCreateNewListFlow: NSObject, SLFlowProtocol {
+    let navigationController: UINavigationController
+    let initialViewController: SLCategoryPickerViewController
+    
+    internal var coreDataExporter: SLCoreDataExporter?
+    internal var coreDataController: SLCoreDataController?
+    internal var networkService: SLNetworkService?
 
+    required init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+        
+        let storyboard: UIStoryboard = UIStoryboard.init(name: "CreateNewListFlow", bundle: nil)
+        self.initialViewController = storyboard.instantiateInitialViewController() as! SLCategoryPickerViewController
+        self.initialViewController.viewModel = SLCategoryPickerViewModel()
+        
+        super.init()
+    }
+    
+    func start() {
+        self.initialViewController.viewModel.coreDataExporter = self.coreDataExporter
+        self.initialViewController.viewModel.networkService = self.networkService
+        self.initialViewController.viewModel.reloadData()
+        
+        if self.coreDataController != nil {
+            self.coreDataController!.subscribeListenerForDatabaseChanges(self.initialViewController.viewModel) // TODO: unsubscribe it somewhere else
+        } else {
+            // handle error
+        }
+        
+        self.navigationController.pushViewController(self.initialViewController, animated: true)
+    }
 }

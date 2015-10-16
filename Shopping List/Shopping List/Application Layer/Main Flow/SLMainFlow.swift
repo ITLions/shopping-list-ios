@@ -37,10 +37,21 @@ class SLMainFlow: NSObject, SLFlowProtocol {
             // handle error
         }
         
+        self.initialViewController.addNewListAction = { () -> Void in
+            self.performAddAction()
+        }
         if (self.navigationController.topViewController != nil) {
             self.navigationController.pushViewController(self.initialViewController, animated: true)
         } else {
             self.navigationController.viewControllers = [self.initialViewController]
         }
+    }
+    
+    func performAddAction() {
+        let createNewListFlow: SLCreateNewListFlow = SLCreateNewListFlow.init(navigationController: self.navigationController)
+        createNewListFlow.coreDataController = self.coreDataController
+        createNewListFlow.coreDataExporter = self.coreDataExporter
+        createNewListFlow.networkService = self.networkService
+        createNewListFlow.start()
     }
 }

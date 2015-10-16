@@ -35,6 +35,7 @@ class SLAppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = applicationNavigationController
         
         let mainFlow: SLMainFlow = SLMainFlow.init(navigationController: applicationNavigationController)
+        mainFlow.coreDataController = coreDataController
         mainFlow.coreDataExporter = coreDataExporter
         mainFlow.networkService = networkService
         mainFlow.start()

@@ -8,6 +8,21 @@
 
 import UIKit
 
-class SLProductsListsViewModel: NSObject {
+class SLProductsListsViewModel: NSObject, SLCoreDataControllerListener {
+    var productsListsArray: [SLProductListEntity]?
+    var coreDataExporter: SLCoreDataExporter?
+    var networkService: SLNetworkService?
     
+    //MARK: Data Processing
+    internal func reloadData() {
+        if self.coreDataExporter != nil {
+            self.productsListsArray = self.coreDataExporter!.exportAllProductsLists()
+        } else {
+            // handle error
+        }
+    }
+    
+    func databaseDidChangeState() {
+        self.reloadData()
+    }
 }

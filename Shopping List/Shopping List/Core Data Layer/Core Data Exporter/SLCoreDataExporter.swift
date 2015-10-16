@@ -22,7 +22,7 @@ class SLCoreDataExporter: NSObject {
         return [SLListItemEntity()]
     }
     
-    internal func exportAllProductLists() -> [SLProductListEntity] {
+    internal func exportAllProductsLists() -> [SLProductListEntity] {
         return [SLProductListEntity()]
     }
     

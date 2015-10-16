@@ -134,13 +134,13 @@
 				A6CB2D6D1BCC39BE00ED22B5 /* Core Data Controller */,
 				A6CB2D781BCC50EA00ED22B5 /* Core Data Exporter */,
 				A6CB2D6E1BCC39C700ED22B5 /* Core Data Importer */,
-				A6CB2D251BCC388600ED22B5 /* NSManagedObject */,
+				A6CB2D251BCC388600ED22B5 /* NSManagedObject's */,
 				E5A350621BCBC9D80098AA89 /* Shopping_List.xcdatamodeld */,
 			);
 			path = "Core Data Layer";
 			sourceTree = "<group>";
 		};
-		A6CB2D251BCC388600ED22B5 /* NSManagedObject */ = {
+		A6CB2D251BCC388600ED22B5 /* NSManagedObject's */ = {
 			isa = PBXGroup;
 			children = (
 				A6CB2D5B1BCC397400ED22B5 /* SLCategoryEntity+CoreDataProperties.swift */,
@@ -154,6 +154,7 @@
 				A6CB2D5D1BCC397400ED22B5 /* SLUnitEntity+CoreDataProperties.swift */,
 				A6CB2D5E1BCC397400ED22B5 /* SLUnitEntity.swift */,
 			);
+			name = "NSManagedObject's";
 			path = NSManagedObject;
 			sourceTree = "<group>";
 		};

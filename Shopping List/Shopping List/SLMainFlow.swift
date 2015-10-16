@@ -13,6 +13,7 @@ class SLMainFlow: NSObject, SLFlowProtocol {
     let initialViewController: SLProductsListsVewController
     
     internal var coreDataExporter: SLCoreDataExporter?
+    internal var coreDataController: SLCoreDataController?
     internal var networkService: SLNetworkService?
     
     required init(navigationController: UINavigationController) {
@@ -26,6 +27,16 @@ class SLMainFlow: NSObject, SLFlowProtocol {
     }
     
     func start() {
+        self.initialViewController.viewModel.coreDataExporter = self.coreDataExporter
+        self.initialViewController.viewModel.networkService = self.networkService
+        self.initialViewController.viewModel.reloadData()
+        
+        if self.coreDataController != nil {
+            self.coreDataController!.subscribeListenerForDatabaseChanges(self.initialViewController.viewModel)
+        } else {
+            // handle error
+        }
+        
         if (self.navigationController.topViewController != nil) {
             self.navigationController.pushViewController(self.initialViewController, animated: true)
         } else {

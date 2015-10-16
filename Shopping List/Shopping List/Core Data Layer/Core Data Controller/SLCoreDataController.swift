@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 protocol SLCoreDataControllerListener { // to subscribe and unsubscribe from db cahnges
-    func contextDidSave(context :NSManagedObjectContext)
+    func databaseDidChangeState()
 }
 
 class SLCoreDataController: NSObject {
@@ -52,7 +52,7 @@ class SLCoreDataController: NSObject {
     
     internal func subscribeListenerForDatabaseChanges <Listener where Listener: SLCoreDataControllerListener, Listener: AnyObject> (newListener: Listener) {
         self.listeners.addObject(newListener)
-        NSNotificationCenter.defaultCenter().addObserver(newListener, selector: "contextDidSave:", name: NSManagedObjectContextDidSaveNotification, object: self.mainContext)
+        NSNotificationCenter.defaultCenter().addObserver(newListener, selector: "databaseDidChangeState", name: NSManagedObjectContextDidSaveNotification, object: self.mainContext)
     }
     
     internal func unsubscribeListenerForDatabaseChanges <Listener where Listener: SLCoreDataControllerListener, Listener: AnyObject> (oldListener: Listener) {

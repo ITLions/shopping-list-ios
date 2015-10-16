@@ -8,29 +8,30 @@
 
 import UIKit
 
-class SLProductsListsVewController: UIViewController {
+class SLProductsListsVewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var viewModel: SLProductsListsViewModel!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //send reference to vc into flow object
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Table View
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.viewModel.productsListsArray != nil {
+            return self.viewModel.productsListsArray!.count
+        } else {
+            return 0
+        }
     }
-    */
-
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("SLProductsListsCell", forIndexPath: indexPath) as UITableViewCell
+        if self.viewModel.productsListsArray != nil {
+            let productList: SLProductListEntity = self.viewModel.productsListsArray![indexPath.row]
+            cell.textLabel?.text = productList.listName
+        }
+        
+        return cell
+    }
 }

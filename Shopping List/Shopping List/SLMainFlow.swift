@@ -32,7 +32,7 @@ class SLMainFlow: NSObject, SLFlowProtocol {
         self.initialViewController.viewModel.reloadData()
         
         if self.coreDataController != nil {
-            self.coreDataController!.subscribeListenerForDatabaseChanges(self.initialViewController.viewModel)
+            self.coreDataController!.subscribeListenerForDatabaseChanges(self.initialViewController.viewModel) // TODO: unsubscribe it somewhere else
         } else {
             // handle error
         }

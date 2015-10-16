@@ -17,6 +17,7 @@ class SLProductsListsViewModel: NSObject, SLCoreDataControllerListener {
     internal func reloadData() {
         if self.coreDataExporter != nil {
             self.productsListsArray = self.coreDataExporter!.exportAllProductsLists()
+            // maybe we need prepare data before display it in cell
         } else {
             // handle error
         }

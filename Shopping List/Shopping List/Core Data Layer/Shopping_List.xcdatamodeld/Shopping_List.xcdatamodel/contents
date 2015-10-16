@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="Category" representedClassName="SLCategoryEntity" syncable="YES">
+        <attribute name="categoryDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="categoryIcon" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="category" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="ListItem" representedClassName="SLListItemEntity" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="checked" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="listItem" inverseEntity="Product" syncable="YES"/>
+        <relationship name="productList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProductList" inverseName="listItems" inverseEntity="ProductList" syncable="YES"/>
+    </entity>
+    <entity name="Product" representedClassName="SLProductEntity" syncable="YES">
+        <attribute name="productDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productIcon" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="products" inverseEntity="Category" syncable="YES"/>
+        <relationship name="listItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ListItem" inverseName="product" inverseEntity="ListItem" syncable="YES"/>
+        <relationship name="units" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Unit" inverseName="product" inverseEntity="Unit" syncable="YES"/>
+    </entity>
+    <entity name="ProductList" representedClassName="SLProductListEntity" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="listName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="listItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ListItem" inverseName="productList" inverseEntity="ListItem" syncable="YES"/>
+    </entity>
+    <entity name="Unit" representedClassName="SLUnitEntity" syncable="YES">
+        <attribute name="unitName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="product" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="units" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Product" positionX="-81" positionY="-216" width="128" height="133"/>
+        <element name="Category" positionX="-263" positionY="-216" width="128" height="103"/>
+        <element name="ListItem" positionX="124" positionY="-216" width="128" height="103"/>
+        <element name="ProductList" positionX="340" positionY="-216" width="128" height="88"/>
+        <element name="Unit" positionX="-261" positionY="-72" width="128" height="73"/>
+    </elements>
+</model>

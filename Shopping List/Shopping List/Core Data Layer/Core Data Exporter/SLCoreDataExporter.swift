@@ -23,15 +23,15 @@ class SLCoreDataExporter: NSObject {
     }
     
     internal func exportAllProductsLists() -> [SLProductListEntity] {
-        return [SLProductListEntity()]
+        return []
     }
     
     internal func exportCategories() -> [SLCategoryEntity] {
-        return [SLCategoryEntity()]
+        return []
     }
     
     internal func productsForCategory(category: SLCategoryEntity) -> [SLProductEntity] {
-        return [SLProductEntity()]
+        return []
     }
     
     //MARK: - Private

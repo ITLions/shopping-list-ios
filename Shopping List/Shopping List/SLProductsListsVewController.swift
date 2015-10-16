@@ -13,7 +13,12 @@ class SLProductsListsVewController: UIViewController, UITableViewDelegate, UITab
     
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //send reference to vc into flow object
+        // send reference to vc into flow object
+    }
+    
+    @IBAction func addBarItemAction(sender: AnyObject) {
+        // send action to MainFlow
+        // and start new Flow
     }
     
     // MARK: - Table View

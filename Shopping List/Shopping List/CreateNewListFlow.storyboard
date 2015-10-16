@@ -15,9 +15,55 @@
                     <view key="view" contentMode="scaleToFill" id="WVI-CU-M8b">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XIQ-tO-LcJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="avX-8W-Ah6">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U2J-1h-O76">
+                                        <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <connections>
+                                            <segue destination="u9S-tx-iLP" kind="show" id="JMl-Xx-gSq"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="5I2-Op-MFp" id="dmv-p5-jf2"/>
+                                    <outlet property="delegate" destination="5I2-Op-MFp" id="brj-9u-Xq9"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KjW-de-KV5" firstAttribute="top" secondItem="XIQ-tO-LcJ" secondAttribute="bottom" id="5FC-S3-0pu"/>
+                            <constraint firstAttribute="trailing" secondItem="XIQ-tO-LcJ" secondAttribute="trailing" id="M7K-Gj-uc6"/>
+                            <constraint firstItem="XIQ-tO-LcJ" firstAttribute="top" secondItem="WVI-CU-M8b" secondAttribute="top" id="rYd-pX-kFV"/>
+                            <constraint firstItem="XIQ-tO-LcJ" firstAttribute="leading" secondItem="WVI-CU-M8b" secondAttribute="leading" id="v7K-fC-YXz"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Select Category" id="S7L-kc-IM6">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="had-pV-wVx">
+                            <connections>
+                                <action selector="doneBarItemAction:" destination="5I2-Op-MFp" id="h8N-V0-Zho"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSL-tW-OJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -34,9 +80,45 @@
                     <view key="view" contentMode="scaleToFill" id="q8E-qV-7IY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Tb-UV-EVP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LVo-an-3ay">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cmY-d4-ZEe">
+                                        <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="u9S-tx-iLP" id="7Nj-fY-zXC"/>
+                                    <outlet property="delegate" destination="u9S-tx-iLP" id="a1y-WF-UVU"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CXh-mM-YHw" firstAttribute="top" secondItem="3Tb-UV-EVP" secondAttribute="bottom" id="0MK-aC-NAR"/>
+                            <constraint firstAttribute="trailing" secondItem="3Tb-UV-EVP" secondAttribute="trailing" id="63C-G5-lbv"/>
+                            <constraint firstItem="3Tb-UV-EVP" firstAttribute="top" secondItem="q8E-qV-7IY" secondAttribute="top" id="gEr-3o-a1H"/>
+                            <constraint firstItem="3Tb-UV-EVP" firstAttribute="leading" secondItem="q8E-qV-7IY" secondAttribute="leading" id="ycq-oN-eQu"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Select Product" id="f23-PE-Wff"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73J-OH-Wff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

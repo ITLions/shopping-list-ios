@@ -15,9 +15,49 @@
                     <view key="view" contentMode="scaleToFill" id="boe-fw-aIJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v5K-CM-dWM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SLProductsListsCell" id="PYi-jZ-o5M">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PYi-jZ-o5M" id="yaO-0l-KNF">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <segue destination="JTM-H4-vnT" kind="show" id="38d-f1-r45"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="EAE-nh-U0y" id="4Yh-Gq-q8Y"/>
+                                    <outlet property="delegate" destination="EAE-nh-U0y" id="gtn-pj-vC4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="v5K-CM-dWM" secondAttribute="trailing" id="8cj-ye-Dxx"/>
+                            <constraint firstItem="gXB-dZ-gUy" firstAttribute="top" secondItem="v5K-CM-dWM" secondAttribute="bottom" id="Bzt-Xk-Mey"/>
+                            <constraint firstItem="v5K-CM-dWM" firstAttribute="top" secondItem="boe-fw-aIJ" secondAttribute="top" id="Lza-vq-TdT"/>
+                            <constraint firstItem="v5K-CM-dWM" firstAttribute="leading" secondItem="boe-fw-aIJ" secondAttribute="leading" id="rkT-Ss-PJa"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Products Lists" id="061-Tk-QC8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6lg-Og-t7h">
+                            <connections>
+                                <action selector="addBarItemAction:" destination="EAE-nh-U0y" id="PCg-QW-G29"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7n-P8-1by" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -34,9 +74,27 @@
                     <view key="view" contentMode="scaleToFill" id="L2u-Wc-Fil">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qhR-JU-K1F">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JTM-H4-vnT" id="AVt-IY-Fqv"/>
+                                    <outlet property="delegate" destination="JTM-H4-vnT" id="PBY-gF-m5f"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5rs-JD-uFe" firstAttribute="top" secondItem="qhR-JU-K1F" secondAttribute="bottom" id="Al4-dm-xcX"/>
+                            <constraint firstItem="qhR-JU-K1F" firstAttribute="leading" secondItem="L2u-Wc-Fil" secondAttribute="leading" id="Pht-pZ-6MR"/>
+                            <constraint firstItem="qhR-JU-K1F" firstAttribute="top" secondItem="L2u-Wc-Fil" secondAttribute="top" id="ntO-q4-qdt"/>
+                            <constraint firstAttribute="trailing" secondItem="qhR-JU-K1F" secondAttribute="trailing" id="ote-bw-yu5"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="List Name" id="xz7-6H-HAU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6F-FL-G8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

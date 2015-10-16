@@ -16,6 +16,13 @@ class SLAppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Setup dependences for application
+        let coreDataController: SLCoreDataController = SLCoreDataController.init()
+        let coreDataExporter: SLCoreDataExporter = SLCoreDataExporter.init(dataController: coreDataController)
+        let coreDataImporter: SLCoreDataImporter = SLCoreDataImporter.init(dataController: coreDataController)
+        let networkService: SLNetworkService = SLNetworkService.init(coreDataImporter: coreDataImporter)
+        
         return true
     }
 

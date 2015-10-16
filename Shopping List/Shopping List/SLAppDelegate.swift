@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol SLFlowProtocol {
+    init(navigationController: UINavigationController)
+    
+    func start()
+}
+
 @UIApplicationMain
 class SLAppDelegate: UIResponder, UIApplicationDelegate {
 

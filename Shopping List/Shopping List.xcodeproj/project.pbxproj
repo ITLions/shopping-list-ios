@@ -29,6 +29,18 @@
 		E5D7E17E1BCE9ACC00981DB8 /* SLResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E17D1BCE9ACC00981DB8 /* SLResponseSerialization.swift */; settings = {ASSET_TAGS = (); }; };
 		E5D7E1801BCE9AD900981DB8 /* SLRequestSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E17F1BCE9AD900981DB8 /* SLRequestSerialization.swift */; settings = {ASSET_TAGS = (); }; };
 		E5D7E18E1BD1108A00981DB8 /* SLNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E18D1BD1108A00981DB8 /* SLNetworkService.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E1921BD12CB000981DB8 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D7E1911BD12CB000981DB8 /* MainFlow.storyboard */; settings = {ASSET_TAGS = (); }; };
+		E5D7E1951BD12DDE00981DB8 /* CreateNewListFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D7E1941BD12DDE00981DB8 /* CreateNewListFlow.storyboard */; settings = {ASSET_TAGS = (); }; };
+		E5D7E19B1BD12E5400981DB8 /* SLProductsListsVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E19A1BD12E5400981DB8 /* SLProductsListsVewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E19D1BD12E7A00981DB8 /* SLReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E19C1BD12E7A00981DB8 /* SLReviewListViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E1A11BD12E9C00981DB8 /* SLCategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E1A01BD12E9C00981DB8 /* SLCategoryPickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E1A31BD12EA500981DB8 /* SLProductPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E1A21BD12EA500981DB8 /* SLProductPickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E1A61BD12ED300981DB8 /* SLProductsListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E1A51BD12ED300981DB8 /* SLProductsListsViewModel.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E1A81BD12EDD00981DB8 /* SLReviewListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E1A71BD12EDD00981DB8 /* SLReviewListViewModel.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E1AB1BD12EF500981DB8 /* SLCategoryPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E1AA1BD12EF500981DB8 /* SLCategoryPickerViewModel.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E1AD1BD12F0100981DB8 /* SLProductPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E1AC1BD12F0100981DB8 /* SLProductPickerViewModel.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E1AF1BD1322F00981DB8 /* SLMainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E1AE1BD1322F00981DB8 /* SLMainFlow.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E1B11BD1323A00981DB8 /* SLCreateNewListFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E1B01BD1323A00981DB8 /* SLCreateNewListFlow.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +89,18 @@
 		E5D7E17D1BCE9ACC00981DB8 /* SLResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLResponseSerialization.swift; sourceTree = "<group>"; };
 		E5D7E17F1BCE9AD900981DB8 /* SLRequestSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLRequestSerialization.swift; sourceTree = "<group>"; };
 		E5D7E18D1BD1108A00981DB8 /* SLNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLNetworkService.swift; sourceTree = "<group>"; };
+		E5D7E1911BD12CB000981DB8 /* MainFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainFlow.storyboard; sourceTree = "<group>"; };
+		E5D7E1941BD12DDE00981DB8 /* CreateNewListFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateNewListFlow.storyboard; sourceTree = "<group>"; };
+		E5D7E19A1BD12E5400981DB8 /* SLProductsListsVewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLProductsListsVewController.swift; sourceTree = "<group>"; };
+		E5D7E19C1BD12E7A00981DB8 /* SLReviewListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLReviewListViewController.swift; sourceTree = "<group>"; };
+		E5D7E1A01BD12E9C00981DB8 /* SLCategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLCategoryPickerViewController.swift; sourceTree = "<group>"; };
+		E5D7E1A21BD12EA500981DB8 /* SLProductPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLProductPickerViewController.swift; sourceTree = "<group>"; };
+		E5D7E1A51BD12ED300981DB8 /* SLProductsListsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLProductsListsViewModel.swift; sourceTree = "<group>"; };
+		E5D7E1A71BD12EDD00981DB8 /* SLReviewListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLReviewListViewModel.swift; sourceTree = "<group>"; };
+		E5D7E1AA1BD12EF500981DB8 /* SLCategoryPickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLCategoryPickerViewModel.swift; sourceTree = "<group>"; };
+		E5D7E1AC1BD12F0100981DB8 /* SLProductPickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLProductPickerViewModel.swift; sourceTree = "<group>"; };
+		E5D7E1AE1BD1322F00981DB8 /* SLMainFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLMainFlow.swift; sourceTree = "<group>"; };
+		E5D7E1B01BD1323A00981DB8 /* SLCreateNewListFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLCreateNewListFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +204,8 @@
 		E5A3505A1BCBC9D80098AA89 /* Shopping List */ = {
 			isa = PBXGroup;
 			children = (
+				E5D7E1991BD12E3300981DB8 /* UI Layer */,
+				E5D7E18F1BD12C8000981DB8 /* Application Layer */,
 				A6CB2D241BCC359900ED22B5 /* Core Data Layer */,
 				E5D7E1761BCE99B200981DB8 /* Network Layer */,
 				E5A350651BCBC9D80098AA89 /* Assets.xcassets */,
@@ -248,6 +274,96 @@
 				E5D7E17D1BCE9ACC00981DB8 /* SLResponseSerialization.swift */,
 			);
 			name = "Response Serialization";
+			sourceTree = "<group>";
+		};
+		E5D7E18F1BD12C8000981DB8 /* Application Layer */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E1981BD12E2D00981DB8 /* View Controllers */,
+				E5D7E1961BD12E1A00981DB8 /* View Models */,
+				E5D7E1931BD12DD000981DB8 /* Create New List Flow */,
+				E5D7E1901BD12C9C00981DB8 /* Main Flow */,
+			);
+			name = "Application Layer";
+			sourceTree = "<group>";
+		};
+		E5D7E1901BD12C9C00981DB8 /* Main Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E1911BD12CB000981DB8 /* MainFlow.storyboard */,
+				E5D7E1AE1BD1322F00981DB8 /* SLMainFlow.swift */,
+			);
+			name = "Main Flow";
+			sourceTree = "<group>";
+		};
+		E5D7E1931BD12DD000981DB8 /* Create New List Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E1941BD12DDE00981DB8 /* CreateNewListFlow.storyboard */,
+				E5D7E1B01BD1323A00981DB8 /* SLCreateNewListFlow.swift */,
+			);
+			name = "Create New List Flow";
+			sourceTree = "<group>";
+		};
+		E5D7E1961BD12E1A00981DB8 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E1A91BD12EE300981DB8 /* Create New List Flow */,
+				E5D7E1A41BD12EB800981DB8 /* Main Flow */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		E5D7E1981BD12E2D00981DB8 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E19F1BD12E8600981DB8 /* Create New List Flow */,
+				E5D7E19E1BD12E7E00981DB8 /* Main Flow */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E5D7E1991BD12E3300981DB8 /* UI Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "UI Layer";
+			sourceTree = "<group>";
+		};
+		E5D7E19E1BD12E7E00981DB8 /* Main Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E19A1BD12E5400981DB8 /* SLProductsListsVewController.swift */,
+				E5D7E19C1BD12E7A00981DB8 /* SLReviewListViewController.swift */,
+			);
+			name = "Main Flow";
+			sourceTree = "<group>";
+		};
+		E5D7E19F1BD12E8600981DB8 /* Create New List Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E1A01BD12E9C00981DB8 /* SLCategoryPickerViewController.swift */,
+				E5D7E1A21BD12EA500981DB8 /* SLProductPickerViewController.swift */,
+			);
+			name = "Create New List Flow";
+			sourceTree = "<group>";
+		};
+		E5D7E1A41BD12EB800981DB8 /* Main Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E1A51BD12ED300981DB8 /* SLProductsListsViewModel.swift */,
+				E5D7E1A71BD12EDD00981DB8 /* SLReviewListViewModel.swift */,
+			);
+			name = "Main Flow";
+			sourceTree = "<group>";
+		};
+		E5D7E1A91BD12EE300981DB8 /* Create New List Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E1AA1BD12EF500981DB8 /* SLCategoryPickerViewModel.swift */,
+				E5D7E1AC1BD12F0100981DB8 /* SLProductPickerViewModel.swift */,
+			);
+			name = "Create New List Flow";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +471,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5A350691BCBC9D80098AA89 /* LaunchScreen.storyboard in Resources */,
+				E5D7E1951BD12DDE00981DB8 /* CreateNewListFlow.storyboard in Resources */,
+				E5D7E1921BD12CB000981DB8 /* MainFlow.storyboard in Resources */,
 				E5A350661BCBC9D80098AA89 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,12 +498,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D7E1B11BD1323A00981DB8 /* SLCreateNewListFlow.swift in Sources */,
+				E5D7E19B1BD12E5400981DB8 /* SLProductsListsVewController.swift in Sources */,
 				A6CB2D6C1BCC397400ED22B5 /* SLListItemEntity.swift in Sources */,
+				E5D7E1AF1BD1322F00981DB8 /* SLMainFlow.swift in Sources */,
 				A6CB2D681BCC397400ED22B5 /* SLUnitEntity.swift in Sources */,
 				A6CB2D641BCC397400ED22B5 /* SLProductEntity.swift in Sources */,
 				A6CB2D691BCC397400ED22B5 /* SLProductListEntity+CoreDataProperties.swift in Sources */,
 				A6CB2D7A1BCC511D00ED22B5 /* SLCoreDataExporter.swift in Sources */,
+				E5D7E1AD1BD12F0100981DB8 /* SLProductPickerViewModel.swift in Sources */,
 				E5A3505C1BCBC9D80098AA89 /* SLAppDelegate.swift in Sources */,
+				E5D7E1AB1BD12EF500981DB8 /* SLCategoryPickerViewModel.swift in Sources */,
+				E5D7E1A11BD12E9C00981DB8 /* SLCategoryPickerViewController.swift in Sources */,
 				A6CB2D6A1BCC397400ED22B5 /* SLProductListEntity.swift in Sources */,
 				E5D7E1801BCE9AD900981DB8 /* SLRequestSerialization.swift in Sources */,
 				E5D7E17E1BCE9ACC00981DB8 /* SLResponseSerialization.swift in Sources */,
@@ -394,11 +518,15 @@
 				A6CB2D751BCC3A2000ED22B5 /* SLCoreDataImporter.swift in Sources */,
 				E5A350641BCBC9D80098AA89 /* Shopping_List.xcdatamodeld in Sources */,
 				E5D7E18E1BD1108A00981DB8 /* SLNetworkService.swift in Sources */,
+				E5D7E1A31BD12EA500981DB8 /* SLProductPickerViewController.swift in Sources */,
+				E5D7E19D1BD12E7A00981DB8 /* SLReviewListViewController.swift in Sources */,
 				A6CB2D731BCC3A1200ED22B5 /* SLCoreDataController.swift in Sources */,
 				A6CB2D661BCC397400ED22B5 /* SLCategoryEntity.swift in Sources */,
 				E5D7E1781BCE99BF00981DB8 /* SLNetworkOperation.swift in Sources */,
 				A6CB2D631BCC397400ED22B5 /* SLProductEntity+CoreDataProperties.swift in Sources */,
 				A6CB2D671BCC397400ED22B5 /* SLUnitEntity+CoreDataProperties.swift in Sources */,
+				E5D7E1A61BD12ED300981DB8 /* SLProductsListsViewModel.swift in Sources */,
+				E5D7E1A81BD12EDD00981DB8 /* SLReviewListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,14 +13,14 @@ protocol SLCoreDataControllerListener { // to subscribe and unsubscribe from db 
     func databaseDidChangeState()
 }
 
-class SLCoreDataController: NSObject {
-    private let mainContext : NSManagedObjectContext!
-    private let listeners : NSHashTable!
+class SLCoreDataController {
+    private let mainContext : NSManagedObjectContext
+    private let listeners : NSHashTable
     
     //MARK: - Private
     
     // set up connection to xcdatamodel
-    override init() {
+    init() {
         /* setup NSManagedObjectModel */
         let modelURL = NSBundle.mainBundle().URLForResource("Shopping_List", withExtension: "momd")!
         let managedObjectModel = NSManagedObjectModel(contentsOfURL: modelURL)!
@@ -50,19 +50,19 @@ class SLCoreDataController: NSObject {
     
     //MARK: - Public Notifications
     
-    internal func subscribeListenerForDatabaseChanges <Listener where Listener: SLCoreDataControllerListener, Listener: AnyObject> (newListener: Listener) {
+    func subscribeListenerForDatabaseChanges <Listener where Listener: SLCoreDataControllerListener, Listener: AnyObject> (newListener: Listener) {
         self.listeners.addObject(newListener)
         NSNotificationCenter.defaultCenter().addObserver(newListener, selector: "databaseDidChangeState", name: NSManagedObjectContextDidSaveNotification, object: self.mainContext)
     }
     
-    internal func unsubscribeListenerForDatabaseChanges <Listener where Listener: SLCoreDataControllerListener, Listener: AnyObject> (oldListener: Listener) {
+    func unsubscribeListenerForDatabaseChanges <Listener where Listener: SLCoreDataControllerListener, Listener: AnyObject> (oldListener: Listener) {
         self.listeners.removeObject(oldListener)
         NSNotificationCenter.defaultCenter().removeObserver(oldListener, name: NSManagedObjectContextDidSaveNotification, object: self.mainContext)
     }
     
     // MARK: - Public Context Performance
     
-    internal func performOnMainContext(performBlock: (context: NSManagedObjectContext) -> Void) {
+    func performOnMainContext(performBlock: (context: NSManagedObjectContext) -> Void) {
         self.mainContext.performBlock { () -> Void in
             performBlock(context: self.mainContext)
             
@@ -75,7 +75,7 @@ class SLCoreDataController: NSObject {
         }
     }
     
-    internal func performAndWaitOnMainContext(performBlock: (context: NSManagedObjectContext) -> Void) {
+    func performAndWaitOnMainContext(performBlock: (context: NSManagedObjectContext) -> Void) {
         self.mainContext.performBlockAndWait { () -> Void in
             performBlock(context: self.mainContext)
             
@@ -87,7 +87,7 @@ class SLCoreDataController: NSObject {
         }
     }
     
-    internal func performOnTemporaryContext(performBlock: (context: NSManagedObjectContext) -> Void) {
+    func performOnTemporaryContext(performBlock: (context: NSManagedObjectContext) -> Void) {
         let tempContext = NSManagedObjectContext.init(concurrencyType: .PrivateQueueConcurrencyType)
         tempContext.persistentStoreCoordinator = self.mainContext.persistentStoreCoordinator
         
@@ -102,7 +102,7 @@ class SLCoreDataController: NSObject {
     
     // MARK: - Private Context Performance
     
-    private func contextDidSave(notification: NSNotification) {
+    func contextDidSave(notification: NSNotification) {
         self.mainContext.performBlock { () -> Void in
             self.mainContext.mergeChangesFromContextDidSaveNotification(notification)
         }

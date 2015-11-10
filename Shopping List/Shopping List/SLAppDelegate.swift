@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SLFlowProtocol {
-    init(navigationController: UINavigationController)
+    init(navigationController: UINavigationController, coreDataExporter: SLCoreDataExporter, coreDataController: SLCoreDataController, networkService: SLNetworkService)
     
     func start()
 }
@@ -34,10 +34,7 @@ class SLAppDelegate: UIResponder, UIApplicationDelegate {
         let applicationNavigationController = UINavigationController.init()
         self.window!.rootViewController = applicationNavigationController
         
-        let mainFlow: SLMainFlow = SLMainFlow.init(navigationController: applicationNavigationController)
-        mainFlow.coreDataController = coreDataController
-        mainFlow.coreDataExporter = coreDataExporter
-        mainFlow.networkService = networkService
+        let mainFlow: SLMainFlow = SLMainFlow(navigationController: applicationNavigationController, coreDataExporter: coreDataExporter, coreDataController: coreDataController, networkService: networkService)
         mainFlow.start()
         
         return true

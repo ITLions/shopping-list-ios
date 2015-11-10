@@ -9,35 +9,34 @@
 import UIKit
 
 class SLMainFlow: SLFlowProtocol {
-    let navigationController: UINavigationController
-    let initialViewController: SLProductsListsVewController
+    private let initialViewController: SLProductsListsVewController
+    private let navigationController: UINavigationController
+    private let coreDataExporter: SLCoreDataExporter
+    private let coreDataController: SLCoreDataController
+    private let networkService: SLNetworkService
     
-    internal var coreDataExporter: SLCoreDataExporter?
-    internal var coreDataController: SLCoreDataController?
-    internal var networkService: SLNetworkService?
-    
-    required init(navigationController: UINavigationController) {
+    required init(navigationController: UINavigationController, coreDataExporter: SLCoreDataExporter, coreDataController: SLCoreDataController, networkService: SLNetworkService) {
         self.navigationController = navigationController
+        
+        self.coreDataExporter = coreDataExporter
+        self.coreDataController = coreDataController
+        self.networkService = networkService
         
         let storyboard: UIStoryboard = UIStoryboard.init(name: "MainFlow", bundle: nil)
         self.initialViewController = storyboard.instantiateInitialViewController() as! SLProductsListsVewController
-        self.initialViewController.viewModel = SLProductsListsViewModel()
+        self.initialViewController.viewModel = SLProductsListsViewModel(coreDataExporter: self.coreDataExporter, networkService: self.networkService)
     }
     
     func start() {
-        self.initialViewController.viewModel.coreDataExporter = self.coreDataExporter
-        self.initialViewController.viewModel.networkService = self.networkService
-        self.initialViewController.viewModel.reloadData()
-        
-        if self.coreDataController != nil {
-            self.coreDataController!.subscribeListenerForDatabaseChanges(self.initialViewController.viewModel) // TODO: unsubscribe it somewhere else
-        } else {
-            // handle error
+        if let viewModel = self.initialViewController.viewModel {
+            viewModel.reloadData()
+            self.coreDataController.subscribeListenerForDatabaseChanges(viewModel)
         }
         
         self.initialViewController.addNewListAction = { () -> Void in
             self.performAddAction()
         }
+        
         if (self.navigationController.topViewController != nil) {
             self.navigationController.pushViewController(self.initialViewController, animated: true)
         } else {
@@ -46,10 +45,7 @@ class SLMainFlow: SLFlowProtocol {
     }
     
     func performAddAction() {
-        let createNewListFlow: SLCreateNewListFlow = SLCreateNewListFlow.init(navigationController: self.navigationController)
-        createNewListFlow.coreDataController = self.coreDataController
-        createNewListFlow.coreDataExporter = self.coreDataExporter
-        createNewListFlow.networkService = self.networkService
+        let createNewListFlow: SLCreateNewListFlow = SLCreateNewListFlow(navigationController: self.navigationController, coreDataExporter: self.coreDataExporter, coreDataController: self.coreDataController, networkService: self.networkService)
         createNewListFlow.start()
     }
 }

@@ -8,17 +8,19 @@
 
 class SLProductsListsViewModel: SLCoreDataControllerListener {
     var productsListsArray: [SLProductListEntity]?
-    var coreDataExporter: SLCoreDataExporter?
-    var networkService: SLNetworkService?
+    
+    private let coreDataExporter: SLCoreDataExporter
+    private let networkService: SLNetworkService
+    
+    init(coreDataExporter: SLCoreDataExporter, let networkService: SLNetworkService) {
+        self.coreDataExporter = coreDataExporter
+        self.networkService = networkService
+    }
     
     //MARK: Data Processing
     func reloadData() {
-        if self.coreDataExporter != nil {
-            self.productsListsArray = self.coreDataExporter!.exportAllProductsLists()
-            // maybe we need prepare data before display it in cell
-        } else {
-            // handle error
-        }
+        self.productsListsArray = self.coreDataExporter.exportAllProductsLists()
+        // maybe we need prepare data before display it in cell
     }
     
     func databaseDidChangeState() {

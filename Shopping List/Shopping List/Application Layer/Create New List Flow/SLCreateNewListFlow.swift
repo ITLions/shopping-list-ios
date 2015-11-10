@@ -9,30 +9,29 @@
 import UIKit
 
 class SLCreateNewListFlow: SLFlowProtocol {
-    let navigationController: UINavigationController
     let initialViewController: SLCategoryPickerViewController
     
-    internal var coreDataExporter: SLCoreDataExporter?
-    internal var coreDataController: SLCoreDataController?
-    internal var networkService: SLNetworkService?
+    private let navigationController: UINavigationController
+    private let coreDataExporter: SLCoreDataExporter
+    private let coreDataController: SLCoreDataController
+    private let networkService: SLNetworkService
 
-    required init(navigationController: UINavigationController) {
+    required init(navigationController: UINavigationController, coreDataExporter: SLCoreDataExporter, coreDataController: SLCoreDataController, networkService: SLNetworkService) {
         self.navigationController = navigationController
+        
+        self.coreDataExporter = coreDataExporter
+        self.coreDataController = coreDataController
+        self.networkService = networkService
         
         let storyboard: UIStoryboard = UIStoryboard.init(name: "CreateNewListFlow", bundle: nil)
         self.initialViewController = storyboard.instantiateInitialViewController() as! SLCategoryPickerViewController
-        self.initialViewController.viewModel = SLCategoryPickerViewModel()
+        self.initialViewController.viewModel = SLCategoryPickerViewModel(coreDataExporter: self.coreDataExporter, networkService: self.networkService)
     }
     
     func start() {
-        self.initialViewController.viewModel.coreDataExporter = self.coreDataExporter
-        self.initialViewController.viewModel.networkService = self.networkService
-        self.initialViewController.viewModel.reloadData()
-        
-        if self.coreDataController != nil {
-            self.coreDataController!.subscribeListenerForDatabaseChanges(self.initialViewController.viewModel) // TODO: unsubscribe it somewhere else
-        } else {
-            // handle error
+        if let viewModel = self.initialViewController.viewModel {
+            viewModel.reloadData()
+            self.coreDataController.subscribeListenerForDatabaseChanges(viewModel)
         }
         
         self.navigationController.pushViewController(self.initialViewController, animated: true)

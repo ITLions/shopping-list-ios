@@ -9,7 +9,7 @@
 import UIKit
 
 class SLCategoryPickerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    var viewModel: SLCategoryPickerViewModel!
+    var viewModel: SLCategoryPickerViewModel?
 
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -6,24 +6,21 @@
 //  Copyright © 2015 Pavel Gatilov. All rights reserved.
 //
 
-import Foundation
-
-class SLCoreDataImporter: NSObject {
-    private var dataController: SLCoreDataController! // own data controller to approach data base
+class SLCoreDataImporter {
+    private var dataController: SLCoreDataController // own data controller to approach data base
     // list of methods to create nsmanagedobjects from dictionaries
     // insert them into context after
     // error handling
     // tests
     init(dataController: SLCoreDataController) {
         self.dataController = dataController
-        super.init()
     }
     
-    internal func importProductList(listName: String) -> SLProductListEntity {
+    func importProductList(listName: String) -> SLProductListEntity {
         return SLProductListEntity();
     }
     
-    internal func deleteProductList(productList: SLProductListEntity) {
+    func deleteProductList(productList: SLProductListEntity) {
         
     }
 }

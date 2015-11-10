@@ -6,10 +6,8 @@
 //  Copyright © 2015 Pavel Gatilov. All rights reserved.
 //
 
-import Foundation
-
-class SLCoreDataExporter: NSObject {
-    private let dataController: SLCoreDataController!
+class SLCoreDataExporter {
+    private let dataController: SLCoreDataController
     
     init(dataController: SLCoreDataController) {
         self.dataController = dataController

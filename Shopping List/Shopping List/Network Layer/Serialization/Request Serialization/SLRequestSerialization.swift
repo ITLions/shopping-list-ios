@@ -9,9 +9,9 @@
 import Foundation
 
 class SLRequestSerialization {
-    private  var url: NSURL
-    internal var method: String
-    internal var parameters: AnyObject
+    let url: NSURL
+    let method: String
+    let parameters: AnyObject
     
     init(url: NSURL, method: String, parameters: AnyObject) {
         self.url = url
@@ -21,6 +21,6 @@ class SLRequestSerialization {
     
     internal func buildRequest() -> NSURLRequest {
         // add params to GET request here
-        return NSURLRequest.init(URL: self.url)
+        return NSURLRequest(URL: self.url)
     }
 }

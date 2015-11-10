@@ -7,8 +7,13 @@
 //
 
 class SLCategoryPickerViewModel: SLCoreDataControllerListener {
-    var coreDataExporter: SLCoreDataExporter?
-    var networkService: SLNetworkService?
+    private let coreDataExporter: SLCoreDataExporter
+    private let networkService: SLNetworkService
+    
+    init(coreDataExporter: SLCoreDataExporter, networkService: SLNetworkService) {
+        self.coreDataExporter = coreDataExporter
+        self.networkService = networkService
+    }
     
     func reloadData() {
         

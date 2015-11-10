@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A68A68B41BF29B6700024CF4 /* ApplicationColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68A68B31BF29B6700024CF4 /* ApplicationColor.swift */; settings = {ASSET_TAGS = (); }; };
+		A68A68B71BF2A1A100024CF4 /* ApplicationNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68A68B61BF2A1A100024CF4 /* ApplicationNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 		A6CB2D631BCC397400ED22B5 /* SLProductEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB2D591BCC397400ED22B5 /* SLProductEntity+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		A6CB2D641BCC397400ED22B5 /* SLProductEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB2D5A1BCC397400ED22B5 /* SLProductEntity.swift */; settings = {ASSET_TAGS = (); }; };
 		A6CB2D651BCC397400ED22B5 /* SLCategoryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB2D5B1BCC397400ED22B5 /* SLCategoryEntity+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
@@ -61,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A68A68B31BF29B6700024CF4 /* ApplicationColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationColor.swift; sourceTree = SOURCE_ROOT; };
+		A68A68B61BF2A1A100024CF4 /* ApplicationNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationNavigationController.swift; sourceTree = "<group>"; };
 		A6CB2D591BCC397400ED22B5 /* SLProductEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SLProductEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A6CB2D5A1BCC397400ED22B5 /* SLProductEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLProductEntity.swift; sourceTree = "<group>"; };
 		A6CB2D5B1BCC397400ED22B5 /* SLCategoryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SLCategoryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -128,6 +132,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A68A68B21BF29B4C00024CF4 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				A68A68B31BF29B6700024CF4 /* ApplicationColor.swift */,
+			);
+			name = Style;
+			sourceTree = "<group>";
+		};
+		A68A68B51BF2A18B00024CF4 /* Application Navigation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A68A68B61BF2A1A100024CF4 /* ApplicationNavigationController.swift */,
+			);
+			name = "Application Navigation Controller";
+			sourceTree = "<group>";
+		};
 		A6CB2D241BCC359900ED22B5 /* Core Data Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +299,7 @@
 		E5D7E18F1BD12C8000981DB8 /* Application Layer */ = {
 			isa = PBXGroup;
 			children = (
+				A68A68B51BF2A18B00024CF4 /* Application Navigation Controller */,
 				E5D7E1931BD12DD000981DB8 /* Create New List Flow */,
 				E5D7E1901BD12C9C00981DB8 /* Main Flow */,
 				E5D7E1981BD12E2D00981DB8 /* View Controllers */,
@@ -326,6 +347,7 @@
 		E5D7E1991BD12E3300981DB8 /* UI Layer */ = {
 			isa = PBXGroup;
 			children = (
+				A68A68B21BF29B4C00024CF4 /* Style */,
 			);
 			path = "UI Layer";
 			sourceTree = "<group>";
@@ -502,11 +524,13 @@
 				E5D7E19B1BD12E5400981DB8 /* SLProductsListsVewController.swift in Sources */,
 				A6CB2D6C1BCC397400ED22B5 /* SLListItemEntity.swift in Sources */,
 				E5D7E1AF1BD1322F00981DB8 /* SLMainFlow.swift in Sources */,
+				A68A68B41BF29B6700024CF4 /* ApplicationColor.swift in Sources */,
 				A6CB2D681BCC397400ED22B5 /* SLUnitEntity.swift in Sources */,
 				A6CB2D641BCC397400ED22B5 /* SLProductEntity.swift in Sources */,
 				A6CB2D691BCC397400ED22B5 /* SLProductListEntity+CoreDataProperties.swift in Sources */,
 				A6CB2D7A1BCC511D00ED22B5 /* SLCoreDataExporter.swift in Sources */,
 				E5D7E1AD1BD12F0100981DB8 /* SLProductPickerViewModel.swift in Sources */,
+				A68A68B71BF2A1A100024CF4 /* ApplicationNavigationController.swift in Sources */,
 				E5A3505C1BCBC9D80098AA89 /* SLAppDelegate.swift in Sources */,
 				E5D7E1AB1BD12EF500981DB8 /* SLCategoryPickerViewModel.swift in Sources */,
 				E5D7E1A11BD12E9C00981DB8 /* SLCategoryPickerViewController.swift in Sources */,

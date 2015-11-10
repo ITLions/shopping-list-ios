@@ -31,7 +31,7 @@ class SLAppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         self.window!.makeKeyAndVisible()
-        let applicationNavigationController = UINavigationController.init()
+        let applicationNavigationController = ApplicationNavigationController()
         self.window!.rootViewController = applicationNavigationController
         
         let mainFlow: SLMainFlow = SLMainFlow(navigationController: applicationNavigationController, coreDataExporter: coreDataExporter, coreDataController: coreDataController, networkService: networkService)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SLCreateNewListFlow: NSObject, SLFlowProtocol {
+class SLCreateNewListFlow: SLFlowProtocol {
     let navigationController: UINavigationController
     let initialViewController: SLCategoryPickerViewController
     
@@ -22,8 +22,6 @@ class SLCreateNewListFlow: NSObject, SLFlowProtocol {
         let storyboard: UIStoryboard = UIStoryboard.init(name: "CreateNewListFlow", bundle: nil)
         self.initialViewController = storyboard.instantiateInitialViewController() as! SLCategoryPickerViewController
         self.initialViewController.viewModel = SLCategoryPickerViewModel()
-        
-        super.init()
     }
     
     func start() {

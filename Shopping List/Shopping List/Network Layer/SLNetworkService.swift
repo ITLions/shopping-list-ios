@@ -6,28 +6,23 @@
 //  Copyright © 2015 Pavel Gatilov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class SLNetworkService: NSObject {
+class SLNetworkService {
     private let operationQueue: NSOperationQueue
     private let coreDataImporter: SLCoreDataImporter
     
     init(coreDataImporter: SLCoreDataImporter) {
-        self.operationQueue = NSOperationQueue.init()
+        self.operationQueue = NSOperationQueue()
         self.operationQueue.name = "SLNetworkService"
         self.coreDataImporter = coreDataImporter
-        super.init()
     }
     
-    internal func performNetworkOperation(operation: SLNetworkOperation) {
-        operation.completionHandler = { (responseData, response) -> Void in
-            let responseSerialization: SLResponseSerialization = SLResponseSerialization.init(coreDataImporter: self.coreDataImporter)
-            responseSerialization.parseResponseData(response, responseData: responseData)
-        }
+    func performNetworkOperation(operation: SLNetworkOperation) {
         self.operationQueue.addOperation(operation)
     }
     
-    internal func cancelAllOperations() {
+    func cancelAllOperations() {
         self.operationQueue.cancelAllOperations()
     }
 }

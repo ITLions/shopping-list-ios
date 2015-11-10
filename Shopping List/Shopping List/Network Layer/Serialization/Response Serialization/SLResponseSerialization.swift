@@ -6,15 +6,14 @@
 //  Copyright © 2015 Pavel Gatilov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class SLResponseSerialization: NSObject {
+class SLResponseSerialization {
     private let coreDataImporter: SLCoreDataImporter!
     private var mappingObject: NSDictionary?
     
     init(coreDataImporter: SLCoreDataImporter) {
         self.coreDataImporter = coreDataImporter
-        super.init()
     }
     
     func parseResponseData(response: NSURLResponse, responseData: NSData) {

@@ -6,8 +6,6 @@
 //  Copyright © 2015 Pavel Gatilov. All rights reserved.
 //
 
-import UIKit
-
-class SLReviewListViewModel: NSObject {
+class SLReviewListViewModel {
 
 }

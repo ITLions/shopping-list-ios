@@ -6,9 +6,9 @@
 //  Copyright © 2015 Pavel Gatilov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class SLRequestSerialization: NSObject {
+class SLRequestSerialization {
     private  var url: NSURL
     internal var method: String
     internal var parameters: AnyObject
@@ -17,7 +17,6 @@ class SLRequestSerialization: NSObject {
         self.url = url
         self.method = method
         self.parameters = parameters
-        super.init()
     }
     
     internal func buildRequest() -> NSURLRequest {

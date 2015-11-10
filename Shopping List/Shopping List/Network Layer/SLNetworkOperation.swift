@@ -6,17 +6,18 @@
 //  Copyright © 2015 Pavel Gatilov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class SLNetworkOperation: NSOperation {
     private let requestSerialization: SLRequestSerialization
-    var completionHandler: ((NSData, NSURLResponse) -> Void)?
+    private let responseSerialization: SLResponseSerialization
     
-    init(requestSerialization: SLRequestSerialization) {
-            self.requestSerialization = requestSerialization
-            super.init()
+    init(requestSerialization: SLRequestSerialization, responseSerialization: SLResponseSerialization) {
+        self.requestSerialization = requestSerialization
+        self.responseSerialization = responseSerialization
+        super.init()
     }
-
+    
     override func main() {
         // create NSURLSession
         // get request from RS
@@ -28,14 +29,8 @@ class SLNetworkOperation: NSOperation {
                 completionHandler: { (responseData, response, error) -> Void in
                     if error == nil {
                         // handle response
-                        if self.completionHandler != nil {
-                            if (responseData != nil && response != nil) {
-                                self.completionHandler!(responseData!, response!)
-                            } else {
-                                // handle error to get data
-                            }
-                        } else {
-                            assertionFailure("set completion handler before operation call")
+                        if response != nil && responseData != nil {
+                            self.responseSerialization.parseResponseData(response!, responseData: responseData!)
                         }
                     } else {
                         // handle error

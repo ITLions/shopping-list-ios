@@ -6,15 +6,13 @@
 //  Copyright © 2015 Pavel Gatilov. All rights reserved.
 //
 
-import UIKit
-
-class SLProductsListsViewModel: NSObject, SLCoreDataControllerListener {
+class SLProductsListsViewModel: SLCoreDataControllerListener {
     var productsListsArray: [SLProductListEntity]?
     var coreDataExporter: SLCoreDataExporter?
     var networkService: SLNetworkService?
     
     //MARK: Data Processing
-    internal func reloadData() {
+    func reloadData() {
         if self.coreDataExporter != nil {
             self.productsListsArray = self.coreDataExporter!.exportAllProductsLists()
             // maybe we need prepare data before display it in cell

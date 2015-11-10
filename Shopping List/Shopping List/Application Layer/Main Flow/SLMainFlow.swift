@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SLMainFlow: NSObject, SLFlowProtocol {
+class SLMainFlow: SLFlowProtocol {
     let navigationController: UINavigationController
     let initialViewController: SLProductsListsVewController
     
@@ -22,8 +22,6 @@ class SLMainFlow: NSObject, SLFlowProtocol {
         let storyboard: UIStoryboard = UIStoryboard.init(name: "MainFlow", bundle: nil)
         self.initialViewController = storyboard.instantiateInitialViewController() as! SLProductsListsVewController
         self.initialViewController.viewModel = SLProductsListsViewModel()
-        
-        super.init()
     }
     
     func start() {

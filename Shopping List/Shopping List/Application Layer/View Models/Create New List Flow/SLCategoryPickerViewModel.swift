@@ -6,13 +6,11 @@
 //  Copyright © 2015 Pavel Gatilov. All rights reserved.
 //
 
-import UIKit
-
-class SLCategoryPickerViewModel: NSObject, SLCoreDataControllerListener {
+class SLCategoryPickerViewModel: SLCoreDataControllerListener {
     var coreDataExporter: SLCoreDataExporter?
     var networkService: SLNetworkService?
     
-    internal func reloadData() {
+    func reloadData() {
         
     }
     

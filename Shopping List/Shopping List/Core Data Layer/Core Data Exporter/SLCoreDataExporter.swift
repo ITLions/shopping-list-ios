@@ -6,6 +6,8 @@
 //  Copyright © 2015 Pavel Gatilov. All rights reserved.
 //
 
+import CoreData
+
 class SLCoreDataExporter {
     private let dataController: SLCoreDataController
     
@@ -16,23 +18,71 @@ class SLCoreDataExporter {
     // Export NSManagedObjects from CoreData
     
     //MARK: - Public
-    internal func listItemsForProductList(productList: SLProductListEntity) -> [SLListItemEntity] {
-        return [SLListItemEntity()]
+    func listItemsForProductList(productList: SLProductListEntity) -> [SLListItemEntity] {
+        let fetchRequest = NSFetchRequest(entityName: "ListItem")
+        fetchRequest.predicate = NSPredicate(format: "productList == %@", productList)
+        var listItems = [SLListItemEntity]()
+        self.dataController.performAndWaitOnMainContext { (context) -> Void in
+            do {
+                listItems = try context.executeFetchRequest(fetchRequest) as! [SLListItemEntity]
+            } catch {
+                // I sware we'll catch it out later. Again.
+            }
+        }
+        return listItems
     }
     
-    internal func exportAllProductsLists() -> [SLProductListEntity] {
-        return []
+    func unsassignedListItems() -> [SLListItemEntity] {
+        let fetchRequest = NSFetchRequest(entityName: "ListItem")
+        fetchRequest.predicate = NSPredicate(format: "productList == %@", argumentArray: nil)
+        var listItems = [SLListItemEntity]()
+        self.dataController.performAndWaitOnMainContext { (context) -> Void in
+            do {
+                listItems = try context.executeFetchRequest(fetchRequest) as! [SLListItemEntity]
+            } catch {
+                // I sware we'll catch it out later. Again.
+            }
+        }
+        return listItems
     }
     
-    internal func exportCategories() -> [SLCategoryEntity] {
-        return []
+    func exportAllProductsLists() -> [SLProductListEntity] {
+        let fetchRequest = NSFetchRequest(entityName: "ProductList")
+        var productLists = [SLProductListEntity]()
+        self.dataController.performAndWaitOnMainContext { (context) -> Void in
+            do {
+                productLists = try context.executeFetchRequest(fetchRequest) as! [SLProductListEntity]
+            } catch {
+                // I sware we'll catch it out later.
+            }
+        }
+        return productLists
     }
     
-    internal func productsForCategory(category: SLCategoryEntity) -> [SLProductEntity] {
-        return []
+    func exportCategories() -> [SLCategoryEntity] {
+        let fetchRequest = NSFetchRequest(entityName: "Category")
+        var categories = [SLCategoryEntity]()
+        self.dataController.performAndWaitOnMainContext { (context) -> Void in
+            do {
+                categories = try context.executeFetchRequest(fetchRequest) as! [SLCategoryEntity]
+            } catch {
+                // I sware we'll catch it out later.
+            }
+        }
+        return categories
     }
     
-    //MARK: - Private
-    
-    
+    func productsForCategory(category: SLCategoryEntity) -> [SLProductEntity] {
+        let fetchRequest = NSFetchRequest(entityName: "Product")
+        fetchRequest.predicate = NSPredicate(format: "category == %@", category)
+        var products = [SLProductEntity]()
+        self.dataController.performAndWaitOnMainContext { (context) -> Void in
+            do {
+                products = try context.executeFetchRequest(fetchRequest) as! [SLProductEntity]
+            } catch {
+                // I sware we'll catch it out later. Again.
+            }
+        }
+        return products
+    }
 }

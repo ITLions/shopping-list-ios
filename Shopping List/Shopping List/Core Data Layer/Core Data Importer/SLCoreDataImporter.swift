@@ -6,6 +6,8 @@
 //  Copyright © 2015 Pavel Gatilov. All rights reserved.
 //
 
+import CoreData
+
 class SLCoreDataImporter {
     private var dataController: SLCoreDataController // own data controller to approach data base
     // list of methods to create nsmanagedobjects from dictionaries
@@ -16,11 +18,25 @@ class SLCoreDataImporter {
         self.dataController = dataController
     }
     
-    func importProductList(listName: String) -> SLProductListEntity {
-        return SLProductListEntity();
+    func importProductList(listName: String, listItems: [SLListItemEntity]) {
+        self.dataController.performOnMainContext { (context) -> Void in
+            let productList = NSEntityDescription.insertNewObjectForEntityForName("ProductList", inManagedObjectContext: context) as! SLProductListEntity
+            productList.listName = listName
+            productList.listItems = NSSet(array: listItems)
+        }
+    }
+    
+    func importListItem(amount: Int, product: SLProductEntity) {
+        self.dataController.performAndWaitOnMainContext { (context) -> Void in
+            let item = NSEntityDescription.insertNewObjectForEntityForName("ListItem", inManagedObjectContext: context) as! SLListItemEntity
+            item.amount = amount
+            item.product = product
+        }
     }
     
     func deleteProductList(productList: SLProductListEntity) {
-        
+        self.dataController.performAndWaitOnMainContext { (context) -> Void in
+            context.deleteObject(productList)
+        }
     }
 }

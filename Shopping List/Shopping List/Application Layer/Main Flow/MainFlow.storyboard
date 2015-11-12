@@ -58,6 +58,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="v5K-CM-dWM" id="jaH-T9-7wy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7n-P8-1by" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,5 +7,13 @@
 //
 
 class SLReviewListViewModel {
-
+    let productList: SLProductListEntity
+    
+    init(productList: SLProductListEntity) {
+        self.productList = productList
+    }
+    
+    func removeItem(item: SLListItemEntity) {
+        
+    }
 }

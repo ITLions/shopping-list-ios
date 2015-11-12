@@ -23,6 +23,7 @@ class SLCoreDataImporter {
             let productList = NSEntityDescription.insertNewObjectForEntityForName("ProductList", inManagedObjectContext: context) as! SLProductListEntity
             productList.listName = listName
             productList.listItems = NSSet(array: listItems)
+            productList.dateCreated = NSDate()
         }
     }
     
@@ -31,12 +32,6 @@ class SLCoreDataImporter {
             let item = NSEntityDescription.insertNewObjectForEntityForName("ListItem", inManagedObjectContext: context) as! SLListItemEntity
             item.amount = amount
             item.product = product
-        }
-    }
-    
-    func deleteProductList(productList: SLProductListEntity) {
-        self.dataController.performAndWaitOnMainContext { (context) -> Void in
-            context.deleteObject(productList)
         }
     }
 }

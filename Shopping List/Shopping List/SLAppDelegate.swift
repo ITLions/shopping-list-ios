@@ -8,17 +8,10 @@
 
 import UIKit
 
-protocol SLFlowProtocol {
-    init(navigationController: UINavigationController, coreDataExporter: SLCoreDataExporter, coreDataController: SLCoreDataController, networkService: SLNetworkService)
-    
-    func start()
-}
-
 @UIApplicationMain
 class SLAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -36,7 +29,7 @@ class SLAppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainFlow: SLMainFlow = SLMainFlow(navigationController: applicationNavigationController, coreDataExporter: coreDataExporter, coreDataController: coreDataController, networkService: networkService)
         mainFlow.start()
-        
+    
         return true
     }
 

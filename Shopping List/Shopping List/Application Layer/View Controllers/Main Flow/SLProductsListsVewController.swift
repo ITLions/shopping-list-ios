@@ -8,9 +8,26 @@
 
 import UIKit
 
-class SLProductsListsVewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SLProductsListsVewController: UIViewController {
     
-    var viewModel: SLProductsListsViewModel?
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            self.viewModel?.viewModelState.next({ (value) -> () in
+                switch value {
+                case .Loading:
+                    break
+                case .FinishLoading:
+                    self.tableView.reloadData()
+                }
+            })
+        }
+    }
+    
+    var viewModel: SLProductsListsViewModel? {
+        didSet {
+            self.viewModel?.reloadData()
+        }
+    }
     var addNewListAction: (() -> Void)?
     
     // MARK: - Navigation
@@ -25,8 +42,9 @@ class SLProductsListsVewController: UIViewController, UITableViewDelegate, UITab
             addNewListAction()
         }
     }
-    
-    // MARK: - Table View
+}
+
+extension SLProductsListsVewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let productsListsArray = self.viewModel?.productsListsArray {
             return productsListsArray.count
@@ -37,6 +55,9 @@ class SLProductsListsVewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SLProductsListsCell", forIndexPath: indexPath) as UITableViewCell
+        if let productsListsArray = self.viewModel?.productsListsArray {
+            cell.textLabel?.text = productsListsArray[indexPath.row].listName
+        }
         return cell
     }
 }

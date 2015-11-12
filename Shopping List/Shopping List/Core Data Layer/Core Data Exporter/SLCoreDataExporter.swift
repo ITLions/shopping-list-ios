@@ -85,4 +85,10 @@ class SLCoreDataExporter {
         }
         return products
     }
+    
+    func deleteProductList(productList: SLProductListEntity) {
+        self.dataController.performAndWaitOnMainContext { (context) -> Void in
+            context.deleteObject(productList)
+        }
+    }
 }

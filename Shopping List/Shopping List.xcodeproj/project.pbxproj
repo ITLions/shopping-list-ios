@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A67F0F0C1BF40CEE00859574 /* SLFlowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67F0F0B1BF40CEE00859574 /* SLFlowProtocol.swift */; settings = {ASSET_TAGS = (); }; };
+		A67F0F0E1BF40D0E00859574 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67F0F0D1BF40D0E00859574 /* Reactive.swift */; settings = {ASSET_TAGS = (); }; };
 		A68A68B41BF29B6700024CF4 /* ApplicationColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68A68B31BF29B6700024CF4 /* ApplicationColor.swift */; settings = {ASSET_TAGS = (); }; };
 		A68A68B71BF2A1A100024CF4 /* ApplicationNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68A68B61BF2A1A100024CF4 /* ApplicationNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 		A6CB2D631BCC397400ED22B5 /* SLProductEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB2D591BCC397400ED22B5 /* SLProductEntity+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
@@ -63,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A67F0F0B1BF40CEE00859574 /* SLFlowProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLFlowProtocol.swift; sourceTree = "<group>"; };
+		A67F0F0D1BF40D0E00859574 /* Reactive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 		A68A68B31BF29B6700024CF4 /* ApplicationColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationColor.swift; sourceTree = SOURCE_ROOT; };
 		A68A68B61BF2A1A100024CF4 /* ApplicationNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationNavigationController.swift; sourceTree = "<group>"; };
 		A6CB2D591BCC397400ED22B5 /* SLProductEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SLProductEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -132,6 +136,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A67F0F081BF40CA800859574 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7E1931BD12DD000981DB8 /* Create New List Flow */,
+				E5D7E1901BD12C9C00981DB8 /* Main Flow */,
+			);
+			name = Flows;
+			sourceTree = "<group>";
+		};
+		A67F0F0A1BF40CCF00859574 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A68A68B51BF2A18B00024CF4 /* Application Navigation Controller */,
+				A67F0F0B1BF40CEE00859574 /* SLFlowProtocol.swift */,
+				A67F0F0D1BF40D0E00859574 /* Reactive.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		A68A68B21BF29B4C00024CF4 /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,8 +227,8 @@
 		E5A3504F1BCBC9D80098AA89 = {
 			isa = PBXGroup;
 			children = (
-				E5A350591BCBC9D80098AA89 /* Products */,
 				E5A3505A1BCBC9D80098AA89 /* Shopping List */,
+				E5A350591BCBC9D80098AA89 /* Products */,
 				E5A350721BCBC9D90098AA89 /* Shopping ListTests */,
 				E5A3507D1BCBC9D90098AA89 /* Shopping ListUITests */,
 			);
@@ -299,9 +322,8 @@
 		E5D7E18F1BD12C8000981DB8 /* Application Layer */ = {
 			isa = PBXGroup;
 			children = (
-				A68A68B51BF2A18B00024CF4 /* Application Navigation Controller */,
-				E5D7E1931BD12DD000981DB8 /* Create New List Flow */,
-				E5D7E1901BD12C9C00981DB8 /* Main Flow */,
+				A67F0F0A1BF40CCF00859574 /* Utility */,
+				A67F0F081BF40CA800859574 /* Flows */,
 				E5D7E1981BD12E2D00981DB8 /* View Controllers */,
 				E5D7E1961BD12E1A00981DB8 /* View Models */,
 			);
@@ -544,8 +566,10 @@
 				E5D7E18E1BD1108A00981DB8 /* SLNetworkService.swift in Sources */,
 				E5D7E1A31BD12EA500981DB8 /* SLProductPickerViewController.swift in Sources */,
 				E5D7E19D1BD12E7A00981DB8 /* SLReviewListViewController.swift in Sources */,
+				A67F0F0C1BF40CEE00859574 /* SLFlowProtocol.swift in Sources */,
 				A6CB2D731BCC3A1200ED22B5 /* SLCoreDataController.swift in Sources */,
 				A6CB2D661BCC397400ED22B5 /* SLCategoryEntity.swift in Sources */,
+				A67F0F0E1BF40D0E00859574 /* Reactive.swift in Sources */,
 				E5D7E1781BCE99BF00981DB8 /* SLNetworkOperation.swift in Sources */,
 				A6CB2D631BCC397400ED22B5 /* SLProductEntity+CoreDataProperties.swift in Sources */,
 				A6CB2D671BCC397400ED22B5 /* SLUnitEntity+CoreDataProperties.swift in Sources */,

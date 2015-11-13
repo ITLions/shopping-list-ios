@@ -27,6 +27,22 @@ class SLCoreDataController : NSObject /* It is for notifications */ {
         let documentURLS: [AnyObject] = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let documentURL = documentURLS.last!.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
         
+        if let documemtPath = documentURL.path {
+            let fileManager = NSFileManager.defaultManager()
+            if fileManager.fileExistsAtPath(documemtPath) == false {
+                let defaultStorePath = NSBundle.mainBundle().pathForResource("SingleViewCoreData", ofType: "sqlite")
+                if let actPath = defaultStorePath {
+                    do {
+                        try fileManager.copyItemAtPath(actPath, toPath: documemtPath)
+                    } catch {
+                        print("Cant preload DB")
+                    }
+                }
+            }
+        } else {
+            print("cant convert path")
+        }
+        
         do {
             try persistentStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: documentURL, options: nil)
             

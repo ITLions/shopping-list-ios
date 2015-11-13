@@ -9,18 +9,15 @@
 import Foundation
 import CoreData
 
-protocol SLCoreDataControllerListener { // to subscribe and unsubscribe from db cahnges
-    func databaseDidChangeState()
-}
-
-class SLCoreDataController {
+class SLCoreDataController : NSObject /* It is for notifications */ {
     private let mainContext : NSManagedObjectContext
-    private let listeners : NSHashTable
+    
+    let coreDataDidChange = Signal<AnyObject>()
     
     //MARK: - Private
     
     // set up connection to xcdatamodel
-    init() {
+    override init() {
         /* setup NSManagedObjectModel */
         let modelURL = NSBundle.mainBundle().URLForResource("Shopping_List", withExtension: "momd")!
         let managedObjectModel = NSManagedObjectModel(contentsOfURL: modelURL)!
@@ -40,24 +37,7 @@ class SLCoreDataController {
             print("Core data went wrong. You are dummy")
             abort()
         }
-        /* Listeners */
-        self.listeners = NSHashTable.weakObjectsHashTable()
-    }
-    
-    // set up perform methods
-    // error handling
-    // asserts
-    
-    //MARK: - Public Notifications
-    
-    func subscribeListenerForDatabaseChanges <Listener where Listener: SLCoreDataControllerListener, Listener: AnyObject> (newListener: Listener) {
-        self.listeners.addObject(newListener)
-        NSNotificationCenter.defaultCenter().addObserver(newListener, selector: "databaseDidChangeState", name: NSManagedObjectContextDidSaveNotification, object: self.mainContext)
-    }
-    
-    func unsubscribeListenerForDatabaseChanges <Listener where Listener: SLCoreDataControllerListener, Listener: AnyObject> (oldListener: Listener) {
-        self.listeners.removeObject(oldListener)
-        NSNotificationCenter.defaultCenter().removeObserver(oldListener, name: NSManagedObjectContextDidSaveNotification, object: self.mainContext)
+        super.init()
     }
     
     // MARK: - Public Context Performance
@@ -65,12 +45,10 @@ class SLCoreDataController {
     func performOnMainContext(performBlock: (context: NSManagedObjectContext) -> Void) {
         self.mainContext.performBlock { () -> Void in
             performBlock(context: self.mainContext)
-            
             do {
                 try self.mainContext.save()
             } catch {
                 print("Save error")
-                
             }
         }
     }
@@ -78,7 +56,6 @@ class SLCoreDataController {
     func performAndWaitOnMainContext(performBlock: (context: NSManagedObjectContext) -> Void) {
         self.mainContext.performBlockAndWait { () -> Void in
             performBlock(context: self.mainContext)
-            
             do {
                 try self.mainContext.save()
             } catch {
@@ -109,5 +86,4 @@ class SLCoreDataController {
         
         NSNotificationCenter.defaultCenter().removeObserver(self, name: NSManagedObjectContextDidSaveNotification, object: notification.object)
     }
-    
 }

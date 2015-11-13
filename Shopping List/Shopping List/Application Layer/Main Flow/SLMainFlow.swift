@@ -30,7 +30,9 @@ class SLMainFlow: SLFlowProtocol {
     func start() {
         if let viewModel = self.initialViewController.viewModel {
             viewModel.reloadData()
-            self.coreDataController.subscribeListenerForDatabaseChanges(viewModel)
+            self.coreDataController.coreDataDidChange.next({ (_) -> () in
+                viewModel.reloadData()
+            })
         }
         
         self.initialViewController.addNewListAction = { () -> Void in

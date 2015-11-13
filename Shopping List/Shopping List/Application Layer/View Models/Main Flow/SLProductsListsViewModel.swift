@@ -11,7 +11,7 @@ enum SLProductsListsViewModelState {
     case FinishLoading
 }
 
-class SLProductsListsViewModel: SLCoreDataControllerListener {
+class SLProductsListsViewModel {
     var productsListsArray: [SLProductListEntity]?
     
     let viewModelState: Signal<SLProductsListsViewModelState>
@@ -32,10 +32,6 @@ class SLProductsListsViewModel: SLCoreDataControllerListener {
         self.productsListsArray = self.coreDataExporter.exportAllProductsLists()
         // maybe we need prepare data before display it in cell
         self.viewModelState.fire(.FinishLoading)
-    }
-    
-    func databaseDidChangeState() {
-        self.reloadData()
     }
     
     func removeProductList(index: Int) {

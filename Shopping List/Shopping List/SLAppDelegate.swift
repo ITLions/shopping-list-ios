@@ -29,6 +29,10 @@ class SLAppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainFlow: SLMainFlow = SLMainFlow(navigationController: applicationNavigationController, coreDataExporter: coreDataExporter, coreDataController: coreDataController, networkService: networkService)
         mainFlow.start()
+        
+        coreDataController.performOnMainContext { (context) -> Void in
+            print(context)
+        }
     
         return true
     }

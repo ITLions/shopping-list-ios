@@ -6,7 +6,7 @@
 //  Copyright © 2015 Pavel Gatilov. All rights reserved.
 //
 
-class SLCategoryPickerViewModel: SLCoreDataControllerListener {
+class SLCategoryPickerViewModel {
     private let coreDataExporter: SLCoreDataExporter
     private let networkService: SLNetworkService
     
@@ -16,10 +16,6 @@ class SLCategoryPickerViewModel: SLCoreDataControllerListener {
     }
     
     func reloadData() {
-        
-    }
-    
-    func databaseDidChangeState() {
         
     }
 }

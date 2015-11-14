@@ -21,13 +21,11 @@ class SLCategoryPickerViewController: UIViewController {
 
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let cell = sender as! UICollectionViewCell
-        let indexPath = self.collectionView.indexPathForCell(cell)
+        let indexPath = sender as! NSIndexPath
         let destinationViewController = segue.destinationViewController as! SLProductPickerViewController
-        if let actIndexPath = indexPath {
-            if let viewModel = self.viewModel {
-                destinationViewController.viewModel = viewModel.productPickerViewModel(actIndexPath.row)
-            }
+        if let viewModel = self.viewModel {
+            destinationViewController.viewModel = viewModel.productPickerViewModel(indexPath.row)
+            destinationViewController.title = viewModel.categories[indexPath.row].categoryName
         }
     }
     
@@ -59,7 +57,7 @@ extension SLCategoryPickerViewController: UICollectionViewDataSource {
 
 extension SLCategoryPickerViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("Show Products Segue", sender: self.collectionView(collectionView, cellForItemAtIndexPath: indexPath))
+        self.performSegueWithIdentifier("Show Products Segue", sender: indexPath)
     }
 }
 

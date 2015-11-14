@@ -29,13 +29,6 @@ class SLCreateNewListFlow: SLFlowProtocol {
     }
     
     func start() {
-        if let viewModel = self.initialViewController.viewModel {
-            viewModel.reloadData()
-            self.coreDataController.coreDataDidChange.next({ (_) -> () in
-                viewModel.reloadData()
-            })
-        }
-        
         self.navigationController.pushViewController(self.initialViewController, animated: true)
     }
 }

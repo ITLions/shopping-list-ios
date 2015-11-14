@@ -16,11 +16,19 @@ class SLCategoryPickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.collectionView.registerNib(UINib(nibName: SLCategoryPickerCollectionViewCell.xibName(), bundle: nil), forCellWithReuseIdentifier: SLCategoryPickerCollectionViewCell.identifier())
     }
 
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        let cell = sender as! UICollectionViewCell
+        let indexPath = self.collectionView.indexPathForCell(cell)
+        let destinationViewController = segue.destinationViewController as! SLProductPickerViewController
+        if let actIndexPath = indexPath {
+            if let viewModel = self.viewModel {
+                destinationViewController.viewModel = viewModel.productPickerViewModel(actIndexPath.row)
+            }
+        }
     }
     
     @IBAction func doneBarItemAction(sender: AnyObject) {
@@ -30,8 +38,13 @@ class SLCategoryPickerViewController: UIViewController {
 
 extension SLCategoryPickerViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Select Category Cell", forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(SLCategoryPickerCollectionViewCell.identifier(), forIndexPath: indexPath) as! SLCategoryPickerCollectionViewCell
         cell.backgroundColor = UIColor(red: 0.2, green: 0.0, blue: 0.0, alpha: 0.5)
+        
+        if let category = self.viewModel?.categories[indexPath.row] {
+            cell.categoryNameLabel.text = category.categoryName
+        }
+        
         return cell
     }
     
@@ -41,6 +54,12 @@ extension SLCategoryPickerViewController: UICollectionViewDataSource {
         } else {
             return 0
         }
+    }
+}
+
+extension SLCategoryPickerViewController: UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("Show Products Segue", sender: self.collectionView(collectionView, cellForItemAtIndexPath: indexPath))
     }
 }
 

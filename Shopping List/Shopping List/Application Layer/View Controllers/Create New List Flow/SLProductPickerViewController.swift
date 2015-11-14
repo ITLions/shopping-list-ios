@@ -9,7 +9,7 @@
 import UIKit
 
 class SLProductPickerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    var viewModel: SLProductPickerViewModel!
+    var viewModel: SLProductPickerViewModel?
     
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -23,6 +23,10 @@ class SLProductPickerViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        if let viewModel = self.viewModel {
+            return viewModel.products.count
+        } else {
+            return 0
+        }
     }
 }

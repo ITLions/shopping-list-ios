@@ -25,7 +25,7 @@ class SLCreateNewListFlow: SLFlowProtocol {
         
         let storyboard: UIStoryboard = UIStoryboard.init(name: "CreateNewListFlow", bundle: nil)
         self.initialViewController = storyboard.instantiateInitialViewController() as! SLCategoryPickerViewController
-        self.initialViewController.viewModel = SLCategoryPickerViewModel(coreDataExporter: self.coreDataExporter, networkService: self.networkService)
+        self.initialViewController.viewModel = SLCategoryPickerViewModel(coreDataExporter: self.coreDataExporter)
     }
     
     func start() {

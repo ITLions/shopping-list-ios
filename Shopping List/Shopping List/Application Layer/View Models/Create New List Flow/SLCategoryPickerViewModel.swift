@@ -8,14 +8,15 @@
 
 class SLCategoryPickerViewModel {
     private let coreDataExporter: SLCoreDataExporter
-    private let networkService: SLNetworkService
     
     var categories: [SLCategoryEntity]
     
-    init(coreDataExporter: SLCoreDataExporter, networkService: SLNetworkService) {
-        self.coreDataExporter = coreDataExporter
-        self.networkService = networkService
-        
+    init(coreDataExporter: SLCoreDataExporter) {
+        self.coreDataExporter = coreDataExporter        
         self.categories = coreDataExporter.exportCategories()
+    }
+    
+    func productPickerViewModel(index: Int) -> SLProductPickerViewModel {
+        return SLProductPickerViewModel(category: self.categories[index], coreDataExporter: self.coreDataExporter)
     }
 }

@@ -7,5 +7,9 @@
 //
 
 class SLProductPickerViewModel {
-
+    let products: [SLProductEntity]
+    
+    init(category: SLCategoryEntity, coreDataExporter: SLCoreDataExporter) {
+        self.products = coreDataExporter.productsForCategory(category)
+    }
 }

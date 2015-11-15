@@ -23,6 +23,33 @@ class SLProductPickerViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
     }
+    
+    func animateCellItemToList(collectionView: UICollectionView, cell: UICollectionViewCell?) {
+        // Convert cell origin point postion from position on collectionView to position on self.view
+        let convertedOrigin = self.view.convertPoint((cell?.frame.origin)!, fromView: collectionView)
+        // Set destination point of animation
+        let tabBarItemPosition = CGPointMake(self.view.frame.size.width - 80, self.view.frame.size.height + 84)
+        // Convert destination point position from position on self.view to position on collectionView
+        let convertedTabBarItemPosition = collectionView.convertPoint(tabBarItemPosition, fromView: self.view)
+        // Take a snapshot of cell and create a UIImage
+        UIGraphicsBeginImageContext((cell?.bounds.size)!);
+        let context: CGContextRef = UIGraphicsGetCurrentContext()!
+        cell?.layer.renderInContext(context)
+        let cellSnapshotImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let imageSize = cellSnapshotImage.size
+        // Create UIImageView and add it to self.view
+        let snapshotImageView: UIImageView = UIImageView.init(image: cellSnapshotImage)
+        snapshotImageView.frame = CGRectMake(convertedOrigin.x, convertedOrigin.y, (cell?.frame.size.width)!, (cell?.frame.size.height)!)
+        self.view.addSubview(snapshotImageView)
+        // Set animation parameters
+        UIView.animateWithDuration(1, delay: 0.4, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            // Set destination point. It will be 'list tabBarItem' postion
+            snapshotImageView.frame = CGRectMake(convertedTabBarItemPosition.x, convertedTabBarItemPosition.y, imageSize.width/2, imageSize.height/2)
+            }, completion: {_ in
+                snapshotImageView.removeFromSuperview()
+        })
+    }
 }
 
 extension SLProductPickerViewController: UICollectionViewDataSource {
@@ -48,7 +75,8 @@ extension SLProductPickerViewController: UICollectionViewDataSource {
 
 extension SLProductPickerViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        animateCellItemToList(collectionView, cell: cell!)
     }
 }
 
